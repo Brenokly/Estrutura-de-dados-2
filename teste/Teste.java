@@ -5,7 +5,6 @@ import tree.BinaryTree;
 public class Teste {
   public static void main(String[] args) {
     BinaryTree<Integer> tree = new BinaryTree<>();
-
     tree.insert(1);
     tree.insert(2);
     tree.insert(3);

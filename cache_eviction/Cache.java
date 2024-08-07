@@ -21,16 +21,22 @@ public class Cache {
 
   public void add(OrderService ordemServico) { // Algoritmo FIFO
     if (cache.size() >= CAPACIDADE) { // Cache cheia
-      cache.removeLast(); // Remove o primeiro elemento
+      cache.removeLast(); // Remove o último elemento
     }
-    cache.addFirst(ordemServico); // Adiciona no final
+    cache.addFirst(ordemServico); // Adiciona no início
   }
 
   // Métodos para exibir estado da cache
   public void show() {
-    for (OrderService ordem : cache) {
-      System.out.println(ordem.getCodigo() + " - " + ordem.getNome());
+    if (cache.isEmpty()) {
+      System.out.println("Cache vazia.");
+      return;
     }
+    System.out.println("--------------------");
+    for (OrderService ordem : cache) {
+      System.out.println("Código: " + ordem.getCodigo() + " - Nome: " + ordem.getNome());
+    }
+    System.out.println("--------------------");
   }
 
   public int size() {
@@ -45,21 +51,17 @@ public class Cache {
     return cache.isEmpty();
   }
 
-  public boolean contains(OrderService ordemServico) {
-    return cache.contains(ordemServico);
-  }
-
-  public void remove(OrderService ordemServico) {
-    cache.remove(ordemServico);
-  }
-
-  public void remove(int codigo) {
+  public OrderService contains(int codigo) {
     for (OrderService ordem : cache) {
       if (ordem.getCodigo() == codigo) {
-        cache.remove(ordem);
-        break;
+        return ordem;
       }
     }
+    return null;
+  }
+
+  public void remove(OrderService codigo) {
+    cache.remove(codigo);
   }
 
   public OrderService getFirst() {

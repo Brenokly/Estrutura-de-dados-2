@@ -1,6 +1,6 @@
 package cache_eviction.exceptions;
 
-public class InvalidOperationException extends RuntimeException {
+public class InvalidOperationException extends Exception {
   public InvalidOperationException(String message) {
     super(message);
   }

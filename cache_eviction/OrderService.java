@@ -9,23 +9,23 @@ public class OrderService {
   private String descricao;
   private LocalDateTime horaSolicitacao;
 
-  public OrderService(String nome, String descricao, LocalDateTime horaSolicitacao) {
+  public OrderService(String nome, String descricao) {
     this.codigo = ++contadorCodigo;
     this.nome = nome;
     this.descricao = descricao;
-    this.horaSolicitacao = horaSolicitacao;
+    this.horaSolicitacao = LocalDateTime.now();
   }
 
   // um construtor que recebe o id também, porém só cria com o id recebido se ele
   // for maior que o contador
-  public OrderService(int codigo, String nome, String descricao, LocalDateTime horaSolicitacao) {
+  public OrderService(int codigo, String nome, String descricao) {
     if (codigo > contadorCodigo) {
       contadorCodigo = codigo;
     }
     this.codigo = codigo;
     this.nome = nome;
     this.descricao = descricao;
-    this.horaSolicitacao = horaSolicitacao;
+    this.horaSolicitacao = LocalDateTime.now();
   }
 
   /**

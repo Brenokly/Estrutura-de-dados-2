@@ -1,0 +1,448 @@
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: -1
+Altura da Arvore Apos a Operacao: 0
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 0
+Altura da Arvore Apos a Operacao: 1
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 1
+Altura da Arvore Apos a Operacao: 1
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 1
+Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao
+Status do Balanceamento: Houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Remocao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Remocao
+Status do Balanceamento: Nao houve balanceamento
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------

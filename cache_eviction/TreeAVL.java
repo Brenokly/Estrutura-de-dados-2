@@ -19,16 +19,23 @@ public class TreeAVL {
   }
 
   private Node root;
+  private boolean rotated; // Atributo para indicar se houve rotação
 
   TreeAVL() {
     this.root = null;
+    this.rotated = false;
   }
 
-  public void insert(OrderService data) { // método público de busca
+  public int getHeight() {
+    return height(root);
+  }
+
+  public void insert(OrderService data) throws NodeAlreadyExistsException { // método público de busca
     root = insert(root, data);
   }
 
-  private Node insert(Node root, OrderService data) { // método recursivo privado de busca
+  private Node insert(Node root, OrderService data) throws NodeAlreadyExistsException { // método recursivo privado de
+                                                                                        // busca
     if (root == null)
       return new Node(data);
 
@@ -45,11 +52,11 @@ public class TreeAVL {
     return balance(root); // retorna o nó já balanceado tudo
   }
 
-  public void remove(int codigo) { // método público de busca
+  public void remove(int codigo) throws InvalidOperationException { // método público de busca
     root = remove(root, codigo);
   }
 
-  private Node remove(Node root, int codigo) { // método recursivo privado de busca
+  private Node remove(Node root, int codigo) throws InvalidOperationException { // método recursivo privado de busca
     if (root == null) {
       throw new InvalidOperationException("Árvore vazia ou nó não encontrado.");
     }
@@ -85,11 +92,11 @@ public class TreeAVL {
     return balance(root); // retorna o nó já balanceado tudo
   }
 
-  public OrderService search(int codigo) { // método público de busca
+  public OrderService search(int codigo) throws NodeNotFoundException { // método público de busca
     return search(root, codigo);
   }
 
-  private OrderService search(Node root, int codigo) { // método recursivo privado de busca
+  private OrderService search(Node root, int codigo) throws NodeNotFoundException { // método recursivo privado de busca
     if (root == null) {
       throw new NodeNotFoundException("O nó com o código " + codigo + " não existe na árvore.");
     }
@@ -140,7 +147,7 @@ public class TreeAVL {
     return 1 + getQuantityRecords(node.left) + getQuantityRecords(node.right);
   }
 
-  public void alterar(OrderService ordemServico) {
+  public void alterar(OrderService ordemServico) throws NodeNotFoundException { // Método para alterar um nó na árvore
     // Primeiro, buscamos o nó correspondente ao código
     Node node = searchNode(root, ordemServico.getCodigo());
 
@@ -201,8 +208,10 @@ public class TreeAVL {
     newRoot.right = oldRoot;
     oldRoot.left = rightSub;
 
-    newRoot.height = newHeight(newRoot);
     oldRoot.height = newHeight(oldRoot);
+    newRoot.height = newHeight(newRoot);
+
+    this.rotated = true; // Indica que houve rotação
 
     return newRoot;
   }
@@ -214,8 +223,10 @@ public class TreeAVL {
     newRoot.left = oldRoot;
     oldRoot.right = leftSub;
 
-    newRoot.height = newHeight(newRoot);
     oldRoot.height = newHeight(oldRoot);
+    newRoot.height = newHeight(newRoot);
+
+    this.rotated = true; // Indica que houve rotação
 
     return newRoot;
   }
@@ -224,7 +235,8 @@ public class TreeAVL {
     if (node == null) {
       return 0;
     }
-    return 1 + bigger(height(node.left), height(node.right));
+    // A altura é 1 mais o máximo entre a altura dos filhos
+    return 1 + Math.max(height(node.left), height(node.right));
   }
 
   private Node minorKey(Node root) {
@@ -239,10 +251,6 @@ public class TreeAVL {
     return aux;
   }
 
-  private int bigger(int a, int b) {
-    return a < b ? b : a;
-  }
-
   private int height(Node root) {
     if (root == null)
       return -1;
@@ -255,5 +263,12 @@ public class TreeAVL {
       return 0;
 
     return height(root.left) - height(root.right);
+  }
+
+  // Método para verificar se houve rotação e resetar o valor de rotated
+  public boolean wasRotated() {
+    boolean wasRotated = this.rotated;
+    this.rotated = false; // Resetar o valor
+    return wasRotated;
   }
 }

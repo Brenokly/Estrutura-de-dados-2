@@ -1,5 +1,12 @@
 package cache_eviction;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
 import cache_eviction.exceptions.InvalidOperationException;
 import cache_eviction.exceptions.NodeAlreadyExistsException;
 import cache_eviction.exceptions.NodeNotFoundException;
@@ -9,6 +16,19 @@ public class Simulacao {
     // Criar instâncias de Servidor e Cliente
     Server servidor = new Server();
     Cliente cliente = new Cliente(servidor);
+
+    // Limpar o arquivo de log antes de começar
+
+    File file = new File("cache_eviction/log.txt");
+
+    try (FileWriter writer = new FileWriter(file)) {
+      // Abrir o arquivo em modo de escrita sem escrever nada
+      // Isso limpa o conteúdo do arquivo
+    } catch (IOException e) {
+      System.out.println("Ocorreu um erro ao limpar o arquivo: " + e.getMessage());
+    }
+
+    // -------------------------------------------------------------------------------
 
     try {
       // Adicionar 60 ordens de serviço iniciais
@@ -20,12 +40,31 @@ public class Simulacao {
         cliente.registerOrderService(os);
       }
 
+      // --------------------------------------------------------------------------------
+
+      // Log da inserção de 60 ordens de serviço
+
+      String message = String.format("\n----------------------------------------------------\n"
+          + "Insercao de 60 Ordens de Servico concluida."
+          + "\n----------------------------------------------------\n");
+      try (FileWriter fw = new FileWriter("cache_eviction/log.txt", true);
+          BufferedWriter bw = new BufferedWriter(fw);
+          PrintWriter out = new PrintWriter(bw)) {
+        bw.newLine();
+        out.println(message);
+        bw.newLine();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+
+      // -------------------------------------------------------------------------------
+
       // Exibir estado da cache
       System.out.println("Estado da Cache:");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
-      // Realizar as operações conforme descrito
+      // Realizar as operações conforme descrito na descrição do arquivo
 
       // 1. Uma busca
       System.out.println("Busca Ordem de Serviço com código 1");
@@ -37,6 +76,8 @@ public class Simulacao {
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 2. Busca 2
       System.out.println("Busca Ordem de Serviço com código 1 novamente");
       cliente.searchOrderService(1);
@@ -46,6 +87,8 @@ public class Simulacao {
       System.out.println("Estado da Cache:");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
+
+      // -------------------------------------------------------------------------------
 
       // 3. Busca 3
       System.out.println("Busca Ordem de Serviço com código 2");
@@ -57,9 +100,17 @@ public class Simulacao {
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 4. Uma listagem
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
+      List<OrderService> orders = cliente.listOrdersService();
+      System.out.println("Código\tNome");
+      System.out.println("----------------------------");
+      for (OrderService order : orders) {
+        System.out.println(order.getCodigo() + "\t" + order.getNome());
+      }
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
@@ -67,16 +118,28 @@ public class Simulacao {
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 5. Um cadastro
       System.out.println("Cadastro de Nova Ordem de Serviço");
       boolean registrado = cliente.registerOrderService(new OrderService("Nome61", "Descrição61"));
       System.out.println("Registro bem-sucedido: " + registrado);
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 6. Uma listagem
-      System.out.println("Listagem de Ordens de Serviço Após Cadastro");
+      System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
+      orders = cliente.listOrdersService();
+      System.out.println("Código\tNome");
+      System.out.println("----------------------------");
+      for (OrderService order : orders) {
+        System.out.println(order.getCodigo() + "\t" + order.getNome());
+      }
       System.out.println("---------------------------------------------");
+
+      // -------------------------------------------------------------------------------
 
       // 7. Outro cadastro
       System.out.println("Cadastro de Outra Ordem de Serviço");
@@ -84,10 +147,20 @@ public class Simulacao {
       System.out.println("Registro bem-sucedido: " + registrado2);
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 8. Uma listagem
-      System.out.println("Listagem de Ordens de Serviço Após Cadastro");
+      System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
+      orders = cliente.listOrdersService();
+      System.out.println("Código\tNome");
+      System.out.println("----------------------------");
+      for (OrderService order : orders) {
+        System.out.println(order.getCodigo() + "\t" + order.getNome());
+      }
       System.out.println("---------------------------------------------");
+
+      // -------------------------------------------------------------------------------
 
       // 9. Uma alteração
       System.out.println("Alteração da Ordem de Serviço com código 61");
@@ -100,14 +173,24 @@ public class Simulacao {
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 10. Uma listagem
-      System.out.println("Listagem de Ordens de Serviço Após Alteração");
+      System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
+      orders = cliente.listOrdersService();
+      System.out.println("Código\tNome");
+      System.out.println("----------------------------");
+      for (OrderService order : orders) {
+        System.out.println(order.getCodigo() + "\t" + order.getNome());
+      }
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 11. Uma remoção
-      System.out.println("Remoção da Ordem de Serviço com código 61");
-      boolean removido = cliente.removeOrderService(61);
+      System.out.println("Remoção da Ordem de Serviço com código 1");
+      Boolean removido = cliente.removeOrderService(1);
       System.out.println("Remoção bem-sucedida: " + removido);
       System.out.println("---------------------------------------------");
 
@@ -116,10 +199,20 @@ public class Simulacao {
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       // 12. Uma listagem
-      System.out.println("Listagem de Ordens de Serviço Após Remoção");
+      System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
+      orders = cliente.listOrdersService();
+      System.out.println("Código\tNome");
+      System.out.println("----------------------------");
+      for (OrderService order : orders) {
+        System.out.println(order.getCodigo() + "\t" + order.getNome());
+      }
       System.out.println("---------------------------------------------");
+
+      // -------------------------------------------------------------------------------
 
       // 13. Outra remoção
       System.out.println("Remoção da Ordem de Serviço com código 55");
@@ -132,11 +225,18 @@ public class Simulacao {
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
-      // 14. Uma listagem
-      System.out.println("Listagem Final de Ordens de Serviço");
-      cliente.listOrdersService();
-      System.out.println("---------------------------------------------");
+      // -------------------------------------------------------------------------------
 
+      // 14. Uma listagem
+      System.out.println("Listagem de Ordens de Serviço");
+      cliente.listOrdersService();
+      orders = cliente.listOrdersService();
+      System.out.println("Código\tNome");
+      System.out.println("----------------------------");
+      for (OrderService order : orders) {
+        System.out.println(order.getCodigo() + "\t" + order.getNome());
+      }
+      System.out.println("---------------------------------------------");
     } catch (NodeNotFoundException e) { // Tratamento de nodes não encontrados
       System.out.println("---------------------------------------------");
       System.out.println("Exceção: Nó Não Encontrado");

@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-
 import cache_eviction.exceptions.InvalidOperationException;
 import cache_eviction.exceptions.NodeAlreadyExistsException;
 import cache_eviction.exceptions.NodeNotFoundException;
@@ -60,7 +59,7 @@ public class Simulacao {
       // -------------------------------------------------------------------------------
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -68,11 +67,15 @@ public class Simulacao {
 
       // 1. Uma busca
       System.out.println("Busca Ordem de Serviço com código 1");
-      cliente.searchOrderService(1);
+      OrderService auxi = cliente.searchOrderService(1);
+      System.out.println("Ordem de Serviço encontrada:\n");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
+      System.out.println(auxi.getCodigo() + "\t" + auxi.getNome() + "\t" + auxi.getDescricao() + "\t"
+          + auxi.getHoraSolicitacao());
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -80,11 +83,15 @@ public class Simulacao {
 
       // 2. Busca 2
       System.out.println("Busca Ordem de Serviço com código 1 novamente");
-      cliente.searchOrderService(1);
+      auxi = cliente.searchOrderService(1);
+      System.out.println("Ordem de Serviço encontrada:\n");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
+      System.out.println(auxi.getCodigo() + "\t" + auxi.getNome() + "\t" + auxi.getDescricao() + "\t"
+          + auxi.getHoraSolicitacao());
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -92,11 +99,15 @@ public class Simulacao {
 
       // 3. Busca 3
       System.out.println("Busca Ordem de Serviço com código 2");
-      cliente.searchOrderService(2);
+      auxi = cliente.searchOrderService(2);
+      System.out.println("Ordem de Serviço encontrada:\n");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
+      System.out.println(auxi.getCodigo() + "\t" + auxi.getNome() + "\t" + auxi.getDescricao() + "\t"
+          + auxi.getHoraSolicitacao());
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -106,15 +117,16 @@ public class Simulacao {
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       List<OrderService> orders = cliente.listOrdersService();
-      System.out.println("Código\tNome");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
       System.out.println("----------------------------");
       for (OrderService order : orders) {
-        System.out.println(order.getCodigo() + "\t" + order.getNome());
+        System.out.println(order.getCodigo() + "\t" + order.getNome() + "\t" + order.getDescricao() + "\t"
+            + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -132,10 +144,11 @@ public class Simulacao {
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       orders = cliente.listOrdersService();
-      System.out.println("Código\tNome");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
       System.out.println("----------------------------");
       for (OrderService order : orders) {
-        System.out.println(order.getCodigo() + "\t" + order.getNome());
+        System.out.println(order.getCodigo() + "\t" + order.getNome() + "\t" + order.getDescricao() + "\t"
+            + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
 
@@ -153,10 +166,11 @@ public class Simulacao {
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       orders = cliente.listOrdersService();
-      System.out.println("Código\tNome");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
       System.out.println("----------------------------");
       for (OrderService order : orders) {
-        System.out.println(order.getCodigo() + "\t" + order.getNome());
+        System.out.println(order.getCodigo() + "\t" + order.getNome() + "\t" + order.getDescricao() + "\t"
+            + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
 
@@ -164,12 +178,12 @@ public class Simulacao {
 
       // 9. Uma alteração
       System.out.println("Alteração da Ordem de Serviço com código 61");
-      boolean alterado = cliente.alterOrderService(new OrderService(61, "Nome61 Alterado", "Descrição61 Alterada"));
+      boolean alterado = cliente.alterOrderService(new OrderService(61, "Alterado", "Alterada"));
       System.out.println("Alteração bem-sucedida: " + alterado);
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -179,10 +193,11 @@ public class Simulacao {
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       orders = cliente.listOrdersService();
-      System.out.println("Código\tNome");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
       System.out.println("----------------------------");
       for (OrderService order : orders) {
-        System.out.println(order.getCodigo() + "\t" + order.getNome());
+        System.out.println(order.getCodigo() + "\t" + order.getNome() + "\t" + order.getDescricao() + "\t"
+            + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
 
@@ -195,7 +210,7 @@ public class Simulacao {
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -205,10 +220,11 @@ public class Simulacao {
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       orders = cliente.listOrdersService();
-      System.out.println("Código\tNome");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
       System.out.println("----------------------------");
       for (OrderService order : orders) {
-        System.out.println(order.getCodigo() + "\t" + order.getNome());
+        System.out.println(order.getCodigo() + "\t" + order.getNome() + "\t" + order.getDescricao() + "\t"
+            + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
 
@@ -221,7 +237,7 @@ public class Simulacao {
       System.out.println("---------------------------------------------");
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache:");
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
@@ -231,12 +247,58 @@ public class Simulacao {
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       orders = cliente.listOrdersService();
-      System.out.println("Código\tNome");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
       System.out.println("----------------------------");
       for (OrderService order : orders) {
-        System.out.println(order.getCodigo() + "\t" + order.getNome());
+        System.out.println(order.getCodigo() + "\t" + order.getNome() + "\t" + order.getDescricao() + "\t"
+            + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
+      // -------------------------------------------------------------------------------
+
+      // Limpando a cache para realizar as simulações de hits e misses
+      servidor.getCache().clear();
+      System.out.println("Estado da Cache após a limpeza: " + servidor.getCache().size() + " elementos");
+
+      // -------------------------------------------------------------------------------
+      // Realizar buscas (em um for) para gerar hits e misses
+
+      System.out.println("---------------------------------------------");
+      System.out.println("Início da Simulação de Buscas");
+      System.out.println("---------------------------------------------");
+
+      // Buscar 20 ordens de serviço
+      for (int i = 2; i <= 21; i++) {
+        System.out.println("Busca Ordem de Serviço com código " + i);
+        auxi = cliente.searchOrderService(i);
+        System.out.println("Ordem de Serviço encontrada:\n");
+        System.out.println("Código\tNome\tDescrição\tHora Solicitação");
+        System.out.println(auxi.getCodigo() + "\t" + auxi.getNome() + "\t" + auxi.getDescricao() + "\t"
+            + auxi.getHoraSolicitacao());
+        System.out.println("---------------------------------------------");
+
+        // Exibir estado da cache
+        System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
+        servidor.getCache().show();
+        System.out.println("---------------------------------------------");
+      }
+
+      // -------------------------------------------------------------------------------
+
+      // 20 vigésima primeira busca (cache cheia) será necessário substituir um elemento
+      System.out.println("Busca Ordem de Serviço com código " + 22);
+      auxi = cliente.searchOrderService(22);
+      System.out.println("Ordem de Serviço encontrada:\n");
+      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
+      System.out.println(auxi.getCodigo() + "\t" + auxi.getNome() + "\t" + auxi.getDescricao() + "\t"
+          + auxi.getHoraSolicitacao());
+      System.out.println("---------------------------------------------");
+
+      // Exibir estado da cache
+      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos");
+      servidor.getCache().show();
+      System.out.println("---------------------------------------------");
+
     } catch (NodeNotFoundException e) { // Tratamento de nodes não encontrados
       System.out.println("---------------------------------------------");
       System.out.println("Exceção: Nó Não Encontrado");

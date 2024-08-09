@@ -1,19 +1,19 @@
 package cache_eviction;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class OrderService {
   private static int contadorCodigo = 0;
   private int codigo;
   private String nome;
   private String descricao;
-  private LocalDateTime horaSolicitacao;
+  private LocalTime horaSolicitacao;
 
   public OrderService(String nome, String descricao) {
     this.codigo = ++contadorCodigo;
     this.nome = nome;
     this.descricao = descricao;
-    this.horaSolicitacao = LocalDateTime.now();
+    this.horaSolicitacao = LocalTime.now().withSecond(0).withNano(0);
   }
 
   // um construtor que recebe o id também, porém só cria com o id recebido se ele
@@ -25,7 +25,7 @@ public class OrderService {
     this.codigo = codigo;
     this.nome = nome;
     this.descricao = descricao;
-    this.horaSolicitacao = LocalDateTime.now();
+    this.horaSolicitacao = LocalTime.now().withSecond(0).withNano(0);
   }
 
   /**
@@ -73,14 +73,14 @@ public class OrderService {
   /**
    * @return LocalDateTime return the horaSolicitacao
    */
-  public LocalDateTime getHoraSolicitacao() {
+  public LocalTime getHoraSolicitacao() {
     return horaSolicitacao;
   }
 
   /**
    * @param horaSolicitacao the horaSolicitacao to set
    */
-  public void setHoraSolicitacao(LocalDateTime horaSolicitacao) {
+  public void setHoraSolicitacao(LocalTime horaSolicitacao) {
     this.horaSolicitacao = horaSolicitacao;
   }
 }

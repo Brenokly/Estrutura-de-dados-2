@@ -7,7 +7,7 @@ import cache_eviction.exceptions.InvalidOperationException;
 import cache_eviction.exceptions.NodeAlreadyExistsException;
 import cache_eviction.exceptions.NodeNotFoundException;
 
-public class TreeAVL {
+public class TreeAVL { // base de dados AVL
   class Node { // classe Node
     int height;
     Node left, right;
@@ -149,7 +149,7 @@ public class TreeAVL {
     return 1 + getQuantityRecords(node.left) + getQuantityRecords(node.right);
   }
 
-  public void alterar(OrderService ordemServico) throws NodeNotFoundException { // Método para alterar um nó na árvore
+  public void alter(OrderService ordemServico) throws NodeNotFoundException { // Método para alterar um nó na árvore
     // Primeiro, buscamos o nó correspondente ao código
     Node node = searchNode(root, ordemServico.getCodigo());
 

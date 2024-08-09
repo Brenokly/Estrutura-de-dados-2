@@ -54,13 +54,15 @@ public class Server {
   }
 
   public Boolean alterOrderService(OrderService orderService) throws NodeNotFoundException {
-    dataBase.alterar(orderService);
+    dataBase.alter(orderService);
 
     OrderService ordem = cache.contains(orderService.getCodigo()); // verifica se a ordem esta na cache
 
     // altera na cache se existir
     if (ordem != null) {
       cache.remove(ordem);
+      cache.add(orderService);
+    } else {
       cache.add(orderService);
     }
 

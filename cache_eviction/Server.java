@@ -44,11 +44,7 @@ public class Server {
 
     dataBase.insert(orderService);
 
-    if (dataBase.wasRotated()) { // detecta se a arvore AVL foi balanceada
-      logState("Insercao", true, oldHeight, dataBase.getHeight(), orderService.getCodigo());
-    } else { // caso contrario
-      logState("Insercao", false, oldHeight, dataBase.getHeight(), orderService.getCodigo());
-    }
+    logState("Insercao", oldHeight, dataBase.getHeight(), orderService.getCodigo());
 
     return true;
   }
@@ -82,11 +78,7 @@ public class Server {
       cache.remove(ordem);
     }
 
-    if (dataBase.wasRotated()) { // detecta se a arvore AVL foi balanceada
-      logState("Remocao", true, oldHeight, dataBase.getHeight(), codigo);
-    } else { // caso contrario
-      logState("Remocao", false, oldHeight, dataBase.getHeight(), codigo);
-    }
+    logState("Remocao", oldHeight, dataBase.getHeight(), codigo);
 
     return true;
   }
@@ -95,17 +87,19 @@ public class Server {
     return dataBase.getQuantityRecords();
   }
 
-  private void logState(String operation, boolean wasRotated, int oldHeight, int newHeight, int codigo) {
-    String rotationStatus = wasRotated ? "Houve balanceamento" : "Nao houve balanceamento";
+  private void logState(String operation, int oldHeight, int newHeight, int codigo) {
+    String rotationStatus = dataBase.wasRotated() ? "Houve balanceamento" : "Nao houve balanceamento";
+    String rotationType = dataBase.getRotationType();
 
     String message = String.format(
         "[LOG ENTRY]\n----------------------------------------------------\n" +
             "Operacao: %s do Node %d\n" +
             "Status do Balanceamento: %s\n" +
+            "Tipo de Rotacao: %s\n" +
             "Altura da Arvore Antes da Operacao: %d\n" +
             "Altura da Arvore Apos a Operacao: %d\n" +
             "----------------------------------------------------",
-        operation, codigo, rotationStatus, oldHeight, newHeight);
+        operation, codigo, rotationStatus, rotationType, oldHeight, newHeight);
 
     try (FileWriter fw = new FileWriter("cache_eviction/log.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);

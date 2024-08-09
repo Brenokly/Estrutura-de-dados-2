@@ -20,10 +20,12 @@ public class TreeAVL {
 
   private Node root;
   private boolean rotated; // Atributo para indicar se houve rotação
+  private RotationType rotationType; // Atributo para indicar o tipo de rotação
 
   TreeAVL() {
     this.root = null;
     this.rotated = false;
+    this.rotationType = RotationType.NONE;
   }
 
   public int getHeight() {
@@ -184,15 +186,19 @@ public class TreeAVL {
 
     if (fbRoot > 1) { // Se entrar aqui, então é uma rotação a direita
       if (fbRootLeft >= 0) { // Rotação simples a direita
+        this.rotationType = RotationType.RIGHT;
         return simpleRightRotation(root);
       } else if (fbRootLeft < 0) { // Rotação dupla a direita
+        this.rotationType = RotationType.LEFT_RIGHT;
         root.left = simpleLeftRotation(root.left);
         return simpleRightRotation(root);
       }
     } else if (fbRoot < -1) { // Se entrar aqui, então é uma rotação a esquerda
       if (fbRootRight <= 0) { // Rotação simples a esquerda
+        this.rotationType = RotationType.LEFT;
         return simpleLeftRotation(root);
       } else if (fbRootRight > 0) { // Rotação dupla a esquerda
+        this.rotationType = RotationType.RIGHT_LEFT;
         root.right = simpleRightRotation(root.right);
         return simpleLeftRotation(root);
       }
@@ -270,5 +276,11 @@ public class TreeAVL {
     boolean wasRotated = this.rotated;
     this.rotated = false; // Resetar o valor
     return wasRotated;
+  }
+
+  public String getRotationType() {
+    RotationType rotation = this.rotationType;
+    this.rotationType = RotationType.NONE; // Resetar o valor
+    return rotation.toString();
   }
 }

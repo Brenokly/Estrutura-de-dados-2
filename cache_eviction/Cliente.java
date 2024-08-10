@@ -16,16 +16,16 @@ public class Cliente {
         return servidor.searchOrderService(codigo);
     }
 
-    public Boolean registerOrderService(OrderService OrderService) throws NodeAlreadyExistsException {
-        return servidor.registerOrderService(OrderService);
+    public Boolean registerOrderService(OrderService orderService) throws NodeAlreadyExistsException {
+        return servidor.registerOrderService(orderService);
     }
 
     public List<OrderService> listOrdersService() {
         return servidor.listOrdersService();
     }
 
-    public Boolean alterOrderService(OrderService OrderService) throws NodeNotFoundException {
-        return servidor.alterOrderService(OrderService);
+    public Boolean alterOrderService(OrderService orderService) throws NodeNotFoundException {
+        return servidor.alterOrderService(orderService);
     }
 
     public Boolean removeOrderService(int codigo) throws InvalidOperationException {

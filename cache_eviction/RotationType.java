@@ -7,9 +7,9 @@ public enum RotationType {
   public String toString() {
     switch (this) {
       case LEFT:
-        return "Rotacao a esquerda";
+        return "Rotacao simples a esquerda";
       case RIGHT:
-        return "Rotacao a direita";
+        return "Rotacao simples a direita";
       case LEFT_RIGHT:
         return "Rotacao dupla a esquerda";
       case RIGHT_LEFT:

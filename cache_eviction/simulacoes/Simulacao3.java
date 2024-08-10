@@ -109,9 +109,14 @@ public class Simulacao3 { // Simulação 3: É uma simulação para testar todas
       }
       System.out.println("============================================================");
 
+      // --------------------------------------------------------------------------------
+
+      // 6. Quantidade de registros
+      System.out.println("Quantidade de registros: " + cliente.getQuantityRecords());
+
       // -------------------------------------------------------------------------------
 
-      // 6. Uma remoção
+      // 7. Uma remoção
       System.out.println("Remoção da Ordem de Serviço com código 1");
       Boolean removido = cliente.removeOrderService(1);
       System.out.println("Remoção bem-sucedida: " + removido);
@@ -124,7 +129,7 @@ public class Simulacao3 { // Simulação 3: É uma simulação para testar todas
 
       // -------------------------------------------------------------------------------
 
-      // 7. Uma listagem
+      // 8. Uma listagem
       System.out.println("Listagem de Ordens de Serviço");
       cliente.listOrdersService();
       orders = cliente.listOrdersService();

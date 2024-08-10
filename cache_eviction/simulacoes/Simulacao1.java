@@ -20,7 +20,7 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
     Server servidor = new Server();
     Cliente cliente = new Cliente(servidor);
 
-    // -------------------------------------------------------------------------------
+    // ------------------------------------------------------------8------------------
 
     // Limpar o arquivo de log antes de começar
 
@@ -260,6 +260,11 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
             + order.getHoraSolicitacao());
       }
       System.out.println("---------------------------------------------");
+
+      // --------------------------------------------------------------------------------
+
+      // 15. Quantidade de registros
+      System.out.println("Quantidade de Registros: " + cliente.getQuantityRecords());
 
     } catch (NodeNotFoundException e) { // Tratamento de nodes não encontrados
       System.out.println("---------------------------------------------");

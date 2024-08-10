@@ -27,7 +27,7 @@ public class Simulacao2 { // Simulação 2: É uma simulação para mostrar o fu
     }
 
     try {
-      // Adicionar 60 ordens de serviço iniciais
+      // Adicionar 21 ordens de serviço iniciais
       System.out.println("---------------------------------------------");
       System.out.println("Início da Inserção de Ordens de Serviço");
       System.out.println("---------------------------------------------");

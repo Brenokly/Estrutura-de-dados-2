@@ -20,7 +20,7 @@ public class Cliente {
         return servidor.registerOrderService(orderService);
     }
 
-    public List<OrderService> listOrdersService() {
+    public List<OrderService> listOrdersService() throws NodeNotFoundException {
         return servidor.listOrdersService();
     }
 

@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-
 import cache_eviction.exceptions.InvalidOperationException;
 import cache_eviction.exceptions.NodeAlreadyExistsException;
 import cache_eviction.exceptions.NodeNotFoundException;
@@ -49,7 +48,7 @@ public class Server {
     return true;
   }
 
-  public List<OrderService> listOrdersService() {
+  public List<OrderService> listOrdersService() throws NodeNotFoundException {
     return dataBase.list();
   }
 

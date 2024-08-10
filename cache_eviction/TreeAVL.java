@@ -2,7 +2,6 @@ package cache_eviction;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import cache_eviction.exceptions.InvalidOperationException;
 import cache_eviction.exceptions.NodeAlreadyExistsException;
 import cache_eviction.exceptions.NodeNotFoundException;
@@ -124,7 +123,12 @@ public class TreeAVL { // base de dados AVL
     }
   }
 
-  public List<OrderService> list() { // retorna uma lista de todos os elementos (OrderService) armazenados na árvore
+  public List<OrderService> list() throws NodeNotFoundException { // retorna uma lista de todos os elementos
+                                                                  // (OrderService) armazenados na árvore
+    if (root == null) {
+      throw new NodeNotFoundException("Árvore vazia.");
+    }
+
     List<OrderService> list = new ArrayList<>();
     list(root, list);
     return list;

@@ -32,11 +32,14 @@ public class Cache {
       System.out.println("Cache vazia.");
       return;
     }
-    System.out.println("--------------------");
+    System.out.println(
+        "----------------------------------------------------------------------------");
     for (OrderService ordem : cache) {
-      System.out.println("Código: " + ordem.getCodigo() + " - Nome: " + ordem.getNome());
+      System.out.println("Código: " + ordem.getCodigo() + " - Nome: " + ordem.getNome() + " - Descrição: "
+          + ordem.getDescricao() + " - Hora Solicitação: " + ordem.getHoraSolicitacao());
     }
-    System.out.println("--------------------");
+    System.out.println(
+        "----------------------------------------------------------------------------");
   }
 
   public int size() {

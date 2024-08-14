@@ -23,8 +23,8 @@ public class Teste {
 
     // System.out.println("-------------------------------------------------------\n");
 
-    // tree.ordemRec();
-    // tree.ordemIte();
+    tree.ordemRec();
+    tree.ordemIte();
 
     // System.out.println("-------------------------------------------------------\n");
 

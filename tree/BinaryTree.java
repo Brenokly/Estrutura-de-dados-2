@@ -31,8 +31,8 @@ public class BinaryTree {
   // Método para inserir recursivamente
   // -----------------------------------------------------------------------------------------------------------
 
-  public void insert(int valor) {
-    root = insert(valor, root);
+  public void insert(int key) {
+    root = insert(key, root);
   }
 
   private Node insert(int key, Node root) {
@@ -52,15 +52,15 @@ public class BinaryTree {
 
   public void ordemRec() { // método público para exibir em ordem
     System.out.print("Percurso em Ordem Recusivo: ");
-    this.ordemRec(root);
+    ordemRec(root);
     System.out.println('\n');
   }
 
   private void ordemRec(Node root) { // método privado para exibir em ordem
     if (root != null) {
-      this.ordemRec(root.left);
+      ordemRec(root.left);
       System.out.print(root.key + " ");
-      this.ordemRec(root.right);
+      ordemRec(root.right);
     }
   }
 
@@ -174,7 +174,7 @@ public class BinaryTree {
     }
   }
 
-  // métodos para remover recursivamente
+  // métodos para remover
   // -----------------------------------------------------------------------------------------------------------
 
   public void remove(int key) {

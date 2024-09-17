@@ -378,11 +378,11 @@ public class BinaryTree {
       return quantFolhasRec(root.left) + quantFolhasRec(root.right);
   }
 
+  // iterativo
+
   public int quantFolhasIte() {
     return quantFolhasIte(root);
   }
-
-  // iterativo
 
   private int quantFolhasIte(Node root) {
     if (root == null)
@@ -432,6 +432,8 @@ public class BinaryTree {
     }
     return cont;
   }
+
+  // recursivo
 
   public int contarNosInternosRec() {
     return contarNosInternosRec(root);

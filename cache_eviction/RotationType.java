@@ -10,9 +10,9 @@ public enum RotationType {
         return "Rotacao simples a esquerda";
       case RIGHT:
         return "Rotacao simples a direita";
-      case LEFT_RIGHT:
-        return "Rotacao dupla a esquerda";
       case RIGHT_LEFT:
+        return "Rotacao dupla a esquerda";
+      case LEFT_RIGHT:
         return "Rotacao dupla a direita";
       case NONE:
         return "Nenhuma rotacao";

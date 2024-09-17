@@ -5,15 +5,11 @@ import tree.BinaryTree;
 public class Teste {
   public static void main(String[] args) {
     BinaryTree tree = new BinaryTree();
-    tree.insert(11); // 1°
-    tree.insert(6); // 2°
-    tree.insert(13); // 3°
-    tree.insert(17); // 4°
-    tree.insert(4); // 5°
-    tree.insert(9); // 6°
-    tree.insert(7); // 7°
-    tree.insert(10); // 8°
-    tree.insert(16); // 9°
+    tree.insert(41); // 1°
+    tree.insert(30);
+    tree.insert(42);
+    tree.insert(31);
+    tree.insert(43);
 
     // tree.ordemRec();
 
@@ -89,5 +85,9 @@ public class Teste {
     System.out.println("-------------------------------------------------------\n");
 
     System.out.println("Profundidade do nó " + 16 + " é: " + tree.profundidadeRec(16));
+
+    System.out.println("-------------------------------------------------------\n");
+
+    System.out.println("Altura da árvore é: " + tree.height());
   }
 }

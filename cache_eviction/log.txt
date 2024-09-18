@@ -1,6 +1,6 @@
 [LOG ENTRY]
 ----------------------------------------------------
-Operacao: Insercao do Node 41
+Operacao: Insercao do Node 1
 Status do Balanceamento: Nao houve balanceamento
 Tipo de Rotacao: Nenhuma rotacao
 Altura da Arvore Antes da Operacao: -1
@@ -8,7 +8,7 @@ Altura da Arvore Apos a Operacao: 0
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Operacao: Insercao do Node 38
+Operacao: Insercao do Node 2
 Status do Balanceamento: Nao houve balanceamento
 Tipo de Rotacao: Nenhuma rotacao
 Altura da Arvore Antes da Operacao: 0
@@ -16,15 +16,15 @@ Altura da Arvore Apos a Operacao: 1
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Operacao: Insercao do Node 31
+Operacao: Insercao do Node 3
 Status do Balanceamento: Houve balanceamento
-Tipo de Rotacao: Rotacao simples a direita
+Tipo de Rotacao: Rotacao simples a esquerda
 Altura da Arvore Antes da Operacao: 1
 Altura da Arvore Apos a Operacao: 1
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Operacao: Insercao do Node 12
+Operacao: Insercao do Node 4
 Status do Balanceamento: Nao houve balanceamento
 Tipo de Rotacao: Nenhuma rotacao
 Altura da Arvore Antes da Operacao: 1
@@ -32,9 +32,481 @@ Altura da Arvore Apos a Operacao: 2
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Operacao: Insercao do Node 19
+Operacao: Insercao do Node 5
 Status do Balanceamento: Houve balanceamento
-Tipo de Rotacao: Rotacao dupla a direita
+Tipo de Rotacao: Rotacao simples a esquerda
 Altura da Arvore Antes da Operacao: 2
 Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 6
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 7
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 2
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 8
+Status do Balanceamento: Nao houve balanceamento
+Tipo de Rotacao: Nenhuma rotacao
+Altura da Arvore Antes da Operacao: 2
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 9
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 10
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 11
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 12
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 13
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 14
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 15
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 3
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 16
+Status do Balanceamento: Nao houve balanceamento
+Tipo de Rotacao: Nenhuma rotacao
+Altura da Arvore Antes da Operacao: 3
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 17
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 18
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 19
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 20
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 21
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 22
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 23
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 24
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 25
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 26
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 27
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 28
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 29
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 30
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 31
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 4
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 32
+Status do Balanceamento: Nao houve balanceamento
+Tipo de Rotacao: Nenhuma rotacao
+Altura da Arvore Antes da Operacao: 4
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 33
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 34
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 35
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 36
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 37
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 38
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 39
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 40
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 41
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 42
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 43
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 44
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 45
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 46
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 47
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 48
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 49
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 50
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 51
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 52
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 53
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 54
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 55
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 56
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 57
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 58
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 59
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 60
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 61
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Insercao do Node 62
+Status do Balanceamento: Houve balanceamento
+Tipo de Rotacao: Rotacao simples a esquerda
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Remocao do Node 1
+Status do Balanceamento: Nao houve balanceamento
+Tipo de Rotacao: Nenhuma rotacao
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao: Remocao do Node 55
+Status do Balanceamento: Nao houve balanceamento
+Tipo de Rotacao: Nenhuma rotacao
+Altura da Arvore Antes da Operacao: 5
+Altura da Arvore Apos a Operacao: 5
 ----------------------------------------------------

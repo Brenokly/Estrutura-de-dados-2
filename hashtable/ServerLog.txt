@@ -1,0 +1,2384 @@
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 0
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 1
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 2
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 3
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 4
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 5
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 6
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 7
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 8
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 9
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 10
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 11
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 12
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 13
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 14
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 15
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 16
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 17
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 18
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 19
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 20
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 21
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 22
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 23
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 24
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 25
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 26
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 27
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 28
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 29
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 30
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 31
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 32
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 33
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 34
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 35
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 36
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 37
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 38
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 39
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 40
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 41
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 42
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 43
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 44
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 45
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 46
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 47
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 48
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 49
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 50
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 51
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 52
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 53
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 54
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 55
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+55: 55 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 56
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+55: 55 -> null
+56: 56 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 57
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+55: 55 -> null
+56: 56 -> null
+57: 57 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 58
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+55: 55 -> null
+56: 56 -> null
+57: 57 -> null
+58: 58 -> null
+----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 59
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+55: 55 -> null
+56: 56 -> null
+57: 57 -> null
+58: 58 -> null
+59: 59 -> null
+----------------------------------------------------
+
+
+----------------------------------------------------
+Insercao de 60 Ordens de Servico concluida.
+----------------------------------------------------
+
+
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Remocao
+Codigo da Ordem de Servico: 55
+Status do Redimensionamento: Nao houve redimensionamento
+Tamanho atual da tabela hash: 127
+Estado da Tabela Hash:
+0: 0 -> null
+1: 1 -> null
+2: 2 -> null
+3: 3 -> null
+4: 4 -> null
+5: 5 -> null
+6: 6 -> null
+7: 7 -> null
+8: 8 -> null
+9: 9 -> null
+10: 10 -> null
+11: 11 -> null
+12: 12 -> null
+13: 13 -> null
+14: 14 -> null
+15: 15 -> null
+16: 16 -> null
+17: 17 -> null
+18: 18 -> null
+19: 19 -> null
+20: 20 -> null
+21: 21 -> null
+22: 22 -> null
+23: 23 -> null
+24: 24 -> null
+25: 25 -> null
+26: 26 -> null
+27: 27 -> null
+28: 28 -> null
+29: 29 -> null
+30: 30 -> null
+31: 31 -> null
+32: 32 -> null
+33: 33 -> null
+34: 34 -> null
+35: 35 -> null
+36: 36 -> null
+37: 37 -> null
+38: 38 -> null
+39: 39 -> null
+40: 40 -> null
+41: 41 -> null
+42: 42 -> null
+43: 43 -> null
+44: 44 -> null
+45: 45 -> null
+46: 46 -> null
+47: 47 -> null
+48: 48 -> null
+49: 49 -> null
+50: 50 -> null
+51: 51 -> null
+52: 52 -> null
+53: 53 -> null
+54: 54 -> null
+56: 56 -> null
+57: 57 -> null
+58: 58 -> null
+59: 59 -> null
+----------------------------------------------------

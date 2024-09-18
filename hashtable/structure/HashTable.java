@@ -11,9 +11,13 @@ package hashtable.structure;
  */
 
 import hashtable.exceptions.*;
+import java.util.List;
+import java.util.ArrayList;
+import hashtable.structure.HashFunctions;
 
 public class HashTable {
   final double IGR = 0.6180339887; // IGR = Inverse Golden Ratio
+  final int mask = 0b00000111111000000000; // Máscara para extrair os 5 bits centrais
 
   class Node {
     OrderService data;
@@ -72,16 +76,16 @@ public class HashTable {
   private int hash(int key) {
     switch (hashType) {
       case DIVISION:
-        return key % this.size;
+        return HashFunctions.divisionHash(key, size);
 
       case MULTIPLICATION:
-        return (int) (this.size * ((key * IGR) % 1));
+        return HashFunctions.multiplicationHash(key, size);
 
       case FOLDING:
-        // Não pretendo implementar, mas existe
+        return HashFunctions.foldingHash(key, size);
 
       case ANALYSIS:
-        // Não pretendo implementar, mas existe
+        return HashFunctions.analysisHash(key, size);
 
       default:
         return key % this.size; // Defini o método da divisão como padrão
@@ -152,7 +156,7 @@ public class HashTable {
   // --------------------------------------------------------------------------------
   // Métodos que envolvem a tabela hash como: Inserir, Buscar, Remover e Imprimir
 
-  public boolean isResized() {
+  public boolean heWasResized() {
     boolean resizedAux = this.resized;
     this.resized = false;
     return resizedAux;
@@ -163,7 +167,7 @@ public class HashTable {
   }
 
   public int size() {
-    return table.length;
+    return size;
   }
 
   public boolean isEmpty() {
@@ -172,8 +176,10 @@ public class HashTable {
 
   public void clear() throws InvalidOperationException {
     if (isEmpty()) {
-      throw new InvalidOperationException("Tabela vazia");
+      return; // Poderia lançar uma exceção, mas não é necessário
     }
+
+    count = 0;
 
     for (int i = 0; i < this.size; i++) {
       Node no = this.table[i];
@@ -191,7 +197,7 @@ public class HashTable {
       resize();
     }
 
-    int hashCode = hash(order.getCodigo());
+    int hashCode = hash(order.getCode());
     Node newOrder = this.table[hashCode];
 
     while (newOrder != null) {
@@ -210,12 +216,38 @@ public class HashTable {
     }
   }
 
+  public int exclusiveInsertion(OrderService order) {
+    if (resizable && (double) count / size > 0.75) {
+      resize();
+    }
+
+    int hashCode = hash(order.getCode());
+    int codeExcluded = -1;
+
+    if (this.table[hashCode] == null) {
+      // Não deveria entrar aqui, já que esse método só deve ser chamado se a tabela
+      // está cheia
+      // Mas esse if evita um NullPointerException
+      this.table[hashCode] = new Node(order);
+      count++;
+    } else {
+      codeExcluded = this.table[hashCode].data.getCode(); // código do excluído
+      this.table[hashCode].data = order;
+    }
+
+    return codeExcluded;
+  }
+
   public OrderService search(int code) throws ElementNotFoundException {
+    if (isEmpty()) {
+      throw new ElementNotFoundException("Tabela vazia");
+    }
+
     int hashCode = hash(code);
     Node newOrder = this.table[hashCode];
 
     while (newOrder != null) {
-      if (newOrder.data.getCodigo() == code) {
+      if (newOrder.data.getCode() == code) {
         return newOrder.data;
       }
       newOrder = newOrder.next;
@@ -224,7 +256,47 @@ public class HashTable {
     throw new ElementNotFoundException("Elemento não encontrado");
   }
 
+  public void alter(OrderService orderChanged) throws ElementNotFoundException {
+    if (isEmpty()) {
+      throw new ElementNotFoundException("Tabela vazia");
+    }
+
+    int hashCode = hash(orderChanged.getCode());
+    Node newOrder = this.table[hashCode];
+
+    if (newOrder == null) {
+      throw new ElementNotFoundException("Elemento não encontrado");
+    }
+
+    while (newOrder != null) {
+      if (newOrder.data.getCode() == orderChanged.getCode()) {
+        newOrder.data = orderChanged;
+        return;
+      }
+      newOrder = newOrder.next;
+    }
+  }
+
+  public List<OrderService> list() throws ElementNotFoundException {
+    List<OrderService> list = new ArrayList<OrderService>();
+
+    for (int i = 0; i < table.length; i++) {
+      Node newOrder = this.table[i];
+
+      while (newOrder != null) {
+        list.add(newOrder.data);
+        newOrder = newOrder.next;
+      }
+    }
+
+    return list;
+  }
+
   public boolean contains(int code) {
+    if (isEmpty()) {
+      return false;
+    }
+
     int hashCode = hash(code);
 
     if (table[hashCode] == null) {
@@ -234,10 +306,9 @@ public class HashTable {
     Node newOrder = this.table[hashCode];
 
     while (newOrder != null) {
-      if (newOrder.data.getCodigo() == code) {
+      if (newOrder.data.getCode() == code) {
         return true;
       }
-
       newOrder = newOrder.next;
     }
 
@@ -246,7 +317,7 @@ public class HashTable {
 
   public void remove(int code) throws InvalidOperationException {
     if (isEmpty()) {
-      throw new InvalidOperationException("Tabela vazia");
+      throw new InvalidOperationException("Elemento não existe! Tabela está vazia");
     }
 
     int hashCode = hash(code);
@@ -254,33 +325,65 @@ public class HashTable {
     Node previous = null;
 
     while (newOrder != null) {
-      if (newOrder.data.getCodigo() == code) {
+      if (newOrder.data.getCode() == code) {
         if (previous == null) {
           this.table[hashCode] = newOrder.next;
         } else {
           previous.next = newOrder.next;
         }
+        count--;
         return;
       }
 
       previous = newOrder;
       newOrder = newOrder.next;
     }
+
+    throw new InvalidOperationException("Elemento não existe!");
   }
 
   public void printHashTable() {
+    if (isEmpty()) {
+      return;
+    }
+
     Node no;
     for (int i = 0; i < this.size; i++) {
 
       no = this.table[i];
 
-      System.out.print(i + ":");
+      if (no == null) {
+        continue;
+      }
 
+      System.out.print("posição: " + i + ":");
       while (no != null) {
-        System.out.print(" --> " + no.data.getCodigo() + " " + no.data.getNome() + " | ");
+        System.out.print(" --> ");
+        System.out.print("Code: " + no.data.getCode() + " | ");
         no = no.next;
       }
       System.out.println();
     }
+    System.out.println();
+  }
+
+  public String getTableState() {
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 0; i < table.length; i++) {
+      Node current = table[i];
+      if (current == null) {
+        continue;
+      }
+      sb.append(i).append(": ");
+      while (current != null) {
+        sb.append(current.data.getCode()).append(" -> ");
+        current = current.next;
+      }
+      sb.append("null");
+      sb.append("\n");
+    }
+
+    return sb.toString();
   }
 }

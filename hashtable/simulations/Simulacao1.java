@@ -40,7 +40,7 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
       System.out.println("---------------------------------------------");
       System.out.println("Início da Inserção de Ordens de Serviço");
       System.out.println("---------------------------------------------");
-      for (int i = 1; i <= 60; i++) {
+      for (int i = 0; i <= 1000; i++) {
         OrderService os = new OrderService("Nome" + i, "Descrição" + i);
         cliente.registerOrderService(os);
       }
@@ -50,7 +50,7 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
       // Log da inserção de 60 ordens de serviço
 
       String message = String.format("\n----------------------------------------------------\n"
-          + "Insercao de 60 Ordens de Servico concluida."
+          + "Insercao de 1000 Ordens de Servico concluida."
           + "\n----------------------------------------------------\n");
       try (FileWriter fw = new FileWriter("hashtable/ServerLog.txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
@@ -72,7 +72,7 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
       // Realizar as operações conforme descrito na descrição do arquivo
 
       // 1. Uma busca
-      System.out.println("Busca Ordem de Serviço com código 1");
+      System.out.println("Busca Ordem de Serviço com código 0");
       OrderService auxi = cliente.searchOrderService(0);
       System.out.println("Ordem de Serviço encontrada:\n");
       System.out.println("Código\tNome\tDescrição\tHora Solicitação");
@@ -88,7 +88,7 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
       // -------------------------------------------------------------------------------
 
       // 2. Busca 2
-      System.out.println("Busca Ordem de Serviço com código 1 novamente");
+      System.out.println("Busca Ordem de Serviço com código 1");
       auxi = cliente.searchOrderService(1);
       System.out.println("Ordem de Serviço encontrada:\n");
       System.out.println("Código\tNome\tDescrição\tHora Solicitação");
@@ -120,48 +120,6 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
       System.out.println("Estado da Cache pós-cheia: " + servidor.getCache().size() + " elementos\n");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
-
-      // -------------------------------------------------------------------------------
-
-      List<OrderService> orders;
-
-      // --------------------------------------------------------------------------------
-
-      // 9. Uma alteração
-      System.out.println("Alteração da Ordem de Serviço com código 61");
-      boolean alterado = cliente.alterOrderService(new OrderService(61, "Alterado", "Alterada"));
-      System.out.println("Alteração bem-sucedida: " + alterado);
-      System.out.println("---------------------------------------------");
-
-      // 13. Outra remoção
-      System.out.println("Remoção da Ordem de Serviço com código 55");
-      boolean removido2 = cliente.removeOrderService(55);
-      System.out.println("Remoção bem-sucedida: " + removido2);
-      System.out.println("---------------------------------------------");
-
-      // Exibir estado da cache
-      System.out.println("Estado da Cache: " + servidor.getCache().size() + " elementos\n");
-      servidor.getCache().show();
-      System.out.println("---------------------------------------------");
-
-      // -------------------------------------------------------------------------------
-
-      // 14. Uma listagem
-      System.out.println("Listagem de Ordens de Serviço");
-      cliente.listOrdersService();
-      orders = cliente.listOrdersService();
-      System.out.println("Código\tNome\tDescrição\tHora Solicitação");
-      System.out.println("------------------------------------------");
-      for (OrderService order : orders) {
-        System.out.println(order.getCode() + "\t" + order.getName() + "\t" + order.getDescription() + "\t"
-            + order.getRequestTime());
-      }
-      System.out.println("---------------------------------------------");
-
-      // --------------------------------------------------------------------------------
-
-      // 15. Quantidade de registros
-      System.out.println("Quantidade de Registros: " + cliente.getQuantityRecords());
 
     } catch (ElementNotFoundException e) { // Tratamento de nodes não encontrados
       System.out.println("---------------------------------------------");

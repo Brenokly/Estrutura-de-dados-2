@@ -1,6 +1,6 @@
 package hashtable.structure;
 
-public class HashFunctions {
+public abstract class HashFunctions {
 
   // Constantes para o método da multiplicação
   private static final double A = 0.6180339887; // Uma constante irracional

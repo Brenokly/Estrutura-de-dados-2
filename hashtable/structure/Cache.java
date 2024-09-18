@@ -21,7 +21,7 @@ public class Cache {
    */
 
   public Cache() {
-    this.cache = new HashTable(CAPACIDADE, HashType.ANALYSIS, false);
+    this.cache = new HashTable(CAPACIDADE, HashType.MULTIPLICATION, false);
   }
 
   public OrderService search(int code) {

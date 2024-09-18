@@ -13,7 +13,6 @@ package hashtable.structure;
 import hashtable.exceptions.*;
 import java.util.List;
 import java.util.ArrayList;
-import hashtable.structure.HashFunctions;
 
 public class HashTable {
   final double IGR = 0.6180339887; // IGR = Inverse Golden Ratio

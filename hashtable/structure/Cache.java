@@ -4,29 +4,53 @@ import hashtable.exceptions.*;
 import hashtable.structure.tablestructure.CollisionTreatment;
 import hashtable.structure.tablestructure.HashTable;
 import hashtable.structure.tablestructure.HashType;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/*
+ * Classe Cache que é responsável por armazenar os elementos da tabela Hash
+ * para que a busca seja mais rápida e eficiente.
+ * 
+ * A cache possui uma capacidade máxima de 20 elementos e utiliza a tabela Hash
+ * para armazenar os elementos.
+ * 
+ * A hashTable da cach foi configurada para utilizar o método de hash duplo (dispersão dupla),
+ * não permitir redimensionamento, e tratar colisões por endereçamento aberto.
+ * 
+ * Foram os métodos que eu achei mais apropriados para o caso da cache que não deve ser redimensionada.
+ * Dessa forma ela não possuí colisões nenhuma. E quando a cache está cheia, a inserção é feita de forma exclusiva.
+ * Então é como se a política de cache eviction fosse uma random! Já que não tem como advinhar qual elemento será removido.
+ * 
+ * Pois o elemento removido depende do código do elemento que será inserido. Para qual posição ele será direcionado?
+ * Não dá para advinhar. Então é como se fosse random.
+ */
+
 public class Cache {
-  private final int CAPACIDADE = 20;
+  private int CAPACIDADE;
   private HashTable cache;
 
-  /*
-   * Usei uma fila para controlar a ordem de inserção dos elementos na cache.
-   * Nela eu guardo os códigos das ordem de serviço que foram inseridas.
-   * Quando a cache atinge a capacidade máxima, eu removo o elemento mais antigo
-   * (o da frente da fila).
-   * Como as únicas operações realizadas são de remover o primeiro elemento e
-   * inserir no final, eu não preciso
-   * percorrer a fila para realizar essas operações, o que é eficiente.
-   */
+  //--------------------------------------------------------------------------------
+  // Construtores
 
   public Cache() {
     this.cache = new HashTable(CAPACIDADE, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
+    this.CAPACIDADE = 20;
   }
+
+  public Cache(int capacidade) {
+    this.CAPACIDADE = capacidade;
+    this.cache = new HashTable(capacidade, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
+  }
+
+  public Cache(int capacidade, HashType hashType, boolean redimensionavel, CollisionTreatment collisionTreatment) {
+    this.CAPACIDADE = capacidade;
+    this.cache = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
+  }
+
+  //--------------------------------------------------------------------------------
+  // Métodos
 
   public OrderService search(int code) {
     try {
@@ -82,7 +106,7 @@ public class Cache {
   private void logState(TypeOfOperation operation, int code, boolean exclusion, int codeExcluded) {
     String resizeStatus = cache.heWasResized() ? "Houve redimensionamento" : "Nao houve redimensionamento";
     int currentElements = cache.getQuantityRecords();
-    String exclusionState = exclusion ? "Houve exclusao do elemento " + codeExcluded : "Nao houve exclusao";
+    String exclusionState = exclusion ? "Houve exclusao do elemento de código " + codeExcluded : "Nao houve exclusao";
     String tableState = cache.getTableState(); // Adicione a chamada ao método getTableState()
 
     String message = String.format(

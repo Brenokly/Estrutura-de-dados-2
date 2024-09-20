@@ -3,18 +3,39 @@ package hashtable.structure.tablestructure;
 /*
  * Estrutura de dados HashTable
  * 
- * Nessa tabela hash, para o nosso problema em específico, eu vou utilizar o método da divisão na função de hash.
- * É o método mais recomendado para o nosso problema já que as chaves serão sempre inteiros sequenciais. 1, 2, 3, 4, 5, ...
- * A chave não é grande o suficiente para valer apena usar o método da dobra ou da análise de digito.
- * O método da multiplicação seria uma segunda boa opção para o problema, mas o método da divisão é mais simples.
+ * Qual tipo de função hash foi usada?
  * 
+ * Nessa tabela hash, para o nosso problema em específico, eu configurei para utilizar o método da divisão na função de hash.
+ * É o método mais recomendado para o nosso problema já que as chaves serão sempre inteiros sequenciais. 1, 2, 3, 4, 5,...
+ * E com a propriedade moduladora, a distribuição dos elementos na tabela hash será mais uniforme.
+ * Com o tamanho da tabela hash sendo um número primo, a propriedade moduladora ajuda a minimizar colisões.
+ * 
+ * Porque não utilizar outro método?
+ * 
+ * A chave não é grande o suficiente para valer apena usar o método da dobra ou da análise de digito.
+ * O método da multiplicação seria uma segunda boa opção para o problema, mas o método da divisão é mais simples e eficiente.
+ * 
+ * Qual tratamento de colisão foi usado?
+ * 
+ * O método de tratamento configurado é o do encadeamento exterior, onde cada posição da tabela hash tem a possibilidade de armazenar
+ * mais de um elemento. Cada posição da tabela hash é uma lista encadeada, onde os elementos são inseridos no início da lista.
+ * 
+ * NÃO FIZ TESTES DE DESEMPENHO COM OUTROS MÉTODOS DE TRATAMENTO DE COLISÃO NA BASE DE DADOS!
+ * 
+ * Informações adicionais:
+ * 
+ * A tabela hash é redimensionável, ou seja, ela pode ser redimensionada quando a quantidade de elementos ultrapassar um certo limite.
+ * Esse limite (fator de carga) eu testei vários valores! Com um fator de carga inferior a 1.0, a tabela hash ficou muito grande, mas
+ * não apresenta NENHUMA COLISÃO. Com um fator de carga de 1.5, a tabela hash ficou com um tamanho bom e com poucas colisões.
+ * 
+ * A tabela foi construída para ser bem flexível e fácil de ser adaptada para outros problemas.
+ * Ela pode ser "configurada" para usar outros métodos de função hash e tratamento de colisão.
  */
 
 import hashtable.exceptions.*;
 import hashtable.structure.OrderService;
 import hashtable.structure.tablestructure.Node.NodeExternal;
 import hashtable.structure.tablestructure.Node.NodeOpen;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -24,27 +45,36 @@ public class HashTable {
   int size; // Tamanho da tabela hash
   HashType hashType; // Tipo de função hash que será usada na tabela
   boolean resized; // Atributo para indicar se a tabela foi redimensionada
-  boolean resizable; // Atributo para indicar se a tabela pode ser redimensionada
-  int count; // Quantidade de elementos na tabela
+  boolean resizable; // Atributo para indicar se a tabela pode ou não ser redimensionada
+  int count; // Quantidade atual de elementos na tabela
+  CollisionTreatment collisionTreatment; // Tipo de tratamento de colisão que será usado
   Node[] table; // Tabela hash
-  CollisionTreatment collisionTreatment; // Tipo de tratamento de colisão
 
   // --------------------------------------------------------------------------------
+  // Construtores
 
   public HashTable(int size, HashType hashType, boolean resizable, CollisionTreatment collisionTreatment) {
-    this.size = size;
-    this.hashType = hashType;
-    this.resizable = resizable;
-    this.resized = false;
-    this.count = 0;
-    this.collisionTreatment = collisionTreatment;
+    this.size = size; // Tamanho da tabela
+    this.hashType = hashType; // Tipo de função hash
+    this.resizable = resizable; // Se a tabela pode ser redimensionada
+    this.resized = false; // Atributo para indicar se a tabela foi redimensionada
+    this.count = 0; // Quantidade atual de elementos na tabela
+    this.collisionTreatment = collisionTreatment; // Tipo de tratamento de colisão
 
+    // Cria a tabela hash com base no tratamento de colisão
     if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      table = new NodeExternal[this.size];
+      table = new NodeExternal[this.size]; // NodeExternal tem um atributo next
     } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      table = new NodeOpen[this.size];
+      table = new NodeOpen[this.size]; // NodeOpen é um nó simples só com o atributo data
     }
   }
+
+  // NodeExternal é um nó que tem um atributo next, criado para ser usado no
+  // encadeamento exterior.
+  // NodeOpen é um nó simples que tem apenas o atributo data, criado para ser
+  // usado no endereçamento aberto.
+  // Já que ele não precisa de um atributo next, pois o próximo elemento é
+  // encontrado através da função hash.
 
   public HashTable(int size) {
     this.size = size;
@@ -67,8 +97,7 @@ public class HashTable {
   }
 
   // --------------------------------------------------------------------------------
-  // Métedos que envolvem a tabela hash como: Função Hash e Redimensionamento da
-  // tabela
+  // Funções hash's
 
   private int hash(int key) {
     switch (hashType) {
@@ -88,63 +117,101 @@ public class HashTable {
     }
   }
 
+  // Função hash para o endereçamento aberto
   private int hash(int key, int attempt) {
     return HashFunctions.doubleHash(key, size, attempt);
   }
 
-  private void resize() {
-    resized = true;
+  // --------------------------------------------------------------------------------
+  // Métodos de redimensionamento
+
+  private void resizeDown() {
+    resized = true; // Atributo para indicar que a tabela foi redimensionada
     int newSize;
 
     if (hashType == HashType.DIVISION) {
-      newSize = nextCousin(size * 2);
+      newSize = previousCousin(size / 2);
+    } else {
+      newSize = size / 2;
+    }
+
+    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
+      resizeExternal(newSize);
+    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
+      resizeOpen(newSize);
+    }
+  }
+
+  private void resizeUp() {
+    resized = true; // Atributo para indicar que a tabela foi redimensionada
+    int newSize;
+
+    if (hashType == HashType.DIVISION) {
+      newSize = previousCousin(size * 2);
     } else {
       newSize = size * 2;
     }
 
     if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      NodeExternal[] oldTable = (NodeExternal[]) table;
-      table = new NodeExternal[newSize];
-      size = newSize;
-      count = 0; // Will be updated in the rehash process
-
-      // Rehash elements
-      for (int i = 0; i < oldTable.length; i++) {
-        if (oldTable[i] instanceof NodeExternal) {
-          NodeExternal current = (NodeExternal) oldTable[i];
-          while (current != null) {
-            insert(current.data);
-            current = (NodeExternal) current.next;
-          }
-        }
-      }
-
+      resizeExternal(newSize);
     } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      NodeOpen[] oldTable = (NodeOpen[]) table;
-      table = new NodeOpen[newSize];
-      size = newSize;
-      count = 0; // Will be updated in the rehash process
+      resizeOpen(newSize);
+    }
+  }
 
-      // Rehash elements
-      for (int i = 0; i < oldTable.length; i++) {
-        if (oldTable[i] != null) {
-          insert(oldTable[i].data);
+  // Redimensiona a tabela hash quando o tratamento de colisão é o endereçamento
+  // aberto
+  private void resizeOpen(int newSize) {
+    NodeOpen[] oldTable = (NodeOpen[]) table;
+    table = new NodeOpen[newSize];
+    size = newSize;
+    count = 0; 
+
+    // Rehash elements
+    for (int i = 0; i < oldTable.length; i++) {
+      if (oldTable[i] != null) {
+        insert(oldTable[i].data);
+      }
+    }
+  }
+
+  // Redimensiona a tabela hash quando o tratamento de colisão é o encadeamento
+  // exterior
+  private void resizeExternal(int newSize) {
+    NodeExternal[] oldTable = (NodeExternal[]) table;
+    table = new NodeExternal[newSize];
+    size = newSize;
+    count = 0; 
+
+    // Rehash elements
+    for (int i = 0; i < oldTable.length; i++) {
+      if (oldTable[i] instanceof NodeExternal) {
+        NodeExternal current = (NodeExternal) oldTable[i];
+        while (current != null) {
+          insert(current.data);
+          current = (NodeExternal) current.next;
         }
       }
     }
   }
 
+  // --------------------------------------------------------------------------------
+  // Métodos auxiliares
+
   // Métodos que busca o próximo primo maior que N
-  private int nextCousin(int n) {
+  private int previousCousin(int n) {
     int candidato;
+
+    // Começa de um número ímpar menor que n
     if (n % 2 == 0) {
-      candidato = n + 1;
+      candidato = n - 1;
     } else {
-      candidato = n + 2;
+      candidato = n - 2;
     }
 
-    while (!isCousin(candidato)) {
-      candidato += 2;
+    // Continua decrementando até encontrar um primo
+    while (candidato > 1 && !isCousin(candidato)) {
+      candidato -= 2;
     }
 
     return candidato;
@@ -171,15 +238,6 @@ public class HashTable {
     return true;
   }
 
-  // --------------------------------------------------------------------------------
-  // Métodos que envolvem a tabela hash como: Inserir, Buscar, Remover e Imprimir
-
-  public boolean heWasResized() {
-    boolean resizedAux = this.resized;
-    this.resized = false;
-    return resizedAux;
-  }
-
   public int getQuantityRecords() {
     return count;
   }
@@ -190,6 +248,13 @@ public class HashTable {
 
   public boolean isEmpty() {
     return count == 0;
+  }
+  
+  // Método que verifica se a tabela foi redimensionada e reseta o atributo resized
+  public boolean heWasResized() {
+    boolean resizedAux = this.resized;
+    this.resized = false;
+    return resizedAux;
   }
 
   public void clear() throws InvalidOperationException {
@@ -215,13 +280,16 @@ public class HashTable {
     }
   }
 
+  // --------------------------------------------------------------------------------
+  // Métodos que envolvem a tabela hash como: Inserir, Buscar, Remover e Imprimir
+
   public void insert(OrderService order) {
     // Verifica se a tabela precisa ser redimensionada
     if (resizable && (((double) count) / ((double) size)) > 1.5f) {
-      resize();
+      resizeUp();
     }
 
-    // Verifica o tipo de tratamento de colisão
+    // Verifica o tipo de tratamento de colisão e chamma o método certo
     if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
       insertExternal(order);
     } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
@@ -231,6 +299,7 @@ public class HashTable {
     count++;
   }
 
+  // Método de inserção para o tratamento de colisão por endereçamento aberto
   private void insertOpen(OrderService order) {
     int attempt = 0;
     int hashCode = hash(order.getCode(), attempt);
@@ -249,6 +318,7 @@ public class HashTable {
     }
   }
 
+  // Método de inserção para o tratamento de colisão por encadeamento exterior
   private void insertExternal(OrderService order) {
     int hashCode = hash(order.getCode());
     Node currentNode = this.table[hashCode];
@@ -270,15 +340,25 @@ public class HashTable {
     this.table[hashCode] = nodeToInsert;
   }
 
+  // Método de inserção exclusiva para o caso da tabela não ser redimensionável
+  // e não aceitar colisões. Esse método procura um espaço vazio na tabela e
+  // insere o novo elemento. Se não tiver espaço, ele remove o elemento que está
+  // no índice calculado e insere o novo elemento. Retorna o código do elemento
+  // excluído.
   public int exclusiveInsertion(OrderService order) {
-    if (resizable && (double) count / size > 1.5) {
-      resize();
+    if (resizable && (((double) count) / ((double) size)) > 1.5) {
+      resizeUp();
     }
 
     int hashCode = hash(order.getCode());
-    int codeExcluded = -1;
+    int codeExcluded = -1; // -1 indica que não houve exclusão
 
-    codeExcluded = this.table[hashCode].data.getCode(); // código do excluído
+    if (this.table[hashCode] != null) {
+      codeExcluded = this.table[hashCode].data.getCode(); // código do excluído
+    } else {
+      this.table[hashCode] = new NodeOpen(); // Cria um novo nó
+    }
+    
     this.table[hashCode].data = order;
 
     return codeExcluded;
@@ -298,6 +378,7 @@ public class HashTable {
     throw new ElementNotFoundException("Elemento não encontrado");
   }
 
+  // Método de busca para o tratamento de colisão por encadeamento exterior
   private OrderService searchExternal(int code) {
     int hashCode = hash(code);
     Node currentNode = this.table[hashCode];
@@ -315,6 +396,7 @@ public class HashTable {
     return null;
   }
 
+  // Método de busca para o tratamento de colisão por endereçamento aberto
   private OrderService searchOpen(int code) {
     int attempt = 0;
     int hashCode = hash(code, attempt);
@@ -346,6 +428,7 @@ public class HashTable {
     }
   }
 
+  // Método de alteração para o tratamento de colisão por endereçamento aberto
   private void alterExternal(OrderService orderChanged) {
     int hashCode = hash(orderChanged.getCode());
     Node newOrder = this.table[hashCode];
@@ -362,6 +445,7 @@ public class HashTable {
     }
   }
 
+  // Método de alteração para o tratamento de colisão por encadeamento exterior
   private void alterOpen(OrderService orderChanged) {
     int attempt = 0;
     int hashCode = hash(orderChanged.getCode(), attempt);
@@ -420,6 +504,7 @@ public class HashTable {
     return false;
   }
 
+  // Método que verifica se um elemento existe na tabela hash
   private boolean containsOpen(int code) {
     int attempt = 0;
     int hashCode = hash(code, attempt);
@@ -435,6 +520,7 @@ public class HashTable {
     return false;
   }
 
+  // Método que verifica se um elemento existe na tabela hash
   private boolean containsExternal(int code) {
     int hashCode = hash(code);
 
@@ -462,6 +548,10 @@ public class HashTable {
       throw new InvalidOperationException("Elemento não existe! Tabela está vazia");
     }
 
+    if (resizable && (((double) count) / ((double) size)) < 0.3) {
+      resizeDown();
+    }
+
     if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
       removeExternal(code);
     } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
@@ -471,6 +561,7 @@ public class HashTable {
     throw new InvalidOperationException("Elemento não existe!");
   }
 
+  // Método de remoção para o tratamento de colisão por endereçamento aberto
   private void removeExternal(int code) {
     int hashCode = hash(code);
     Node newOrder = this.table[hashCode];
@@ -495,6 +586,7 @@ public class HashTable {
     }
   }
 
+  // Método de remoção para o tratamento de colisão por encadeamento exterior
   private void removeOpen(int code) {
     int attempt = 0;
     int hashCode = hash(code, attempt);

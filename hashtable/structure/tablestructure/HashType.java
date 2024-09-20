@@ -1,5 +1,9 @@
 package hashtable.structure.tablestructure;
 
+/*
+ * Enumeração que define os tipos de função hash possíveis em uma tabela hash.
+*/
+
 public enum HashType {
 
   // --------------------------------------------------------------------------------
@@ -80,9 +84,9 @@ public enum HashType {
   * Quando usar:
   * 1. Quando as chaves têm muitos dígitos e você deseja combinar diferentes partes
   *    da chave para obter o índice.
+
   * 2. Para chaves grandes e numéricas, como números de cartão de crédito ou CPF, 
-  *    onde a soma ou operações como XOR entre as partes podem distribuir as chaves 
-  *    de maneira uniforme.
+  * onde a soma ou operações como XOR entre as partes podem distribuir as chaves de maneira uniforme.
   * 
   * Cenário ideal:
   * Esse método é ideal para sistemas com chaves longas e padronizadas, especialmente quando 
@@ -101,14 +105,12 @@ public enum HashType {
    * da chave.
    * 
    * Quando usar:
-   * 1 - Quando as chaves têm muitos dígitos e é mais eficiente usar apenas alguns
-   * deles
-   * para gerar o índice.
-   * 2 - Quando os dígitos mais significativos ou menos significativos da chave
-   * não variam muito
+   * 1 - Quando as chaves têm muitos dígitos e é mais eficiente usar apenas alguns deles para gerar o índice.
+   * 
+   * 2 - Quando os dígitos mais significativos ou menos significativos da chave não variam muito
    * e é mais vantajoso usar dígitos do meio.
-   * 3 - Quando a chave possui padrões regulares e uma análise dos dígitos pode
-   * fornecer melhor dispersão.
+   * 
+   * 3 - Quando a chave possui padrões regulares e uma análise dos dígitos pode fornecer melhor dispersão.
    * 
    * Cenário ideal:
    * Esse método é adequado para sistemas que utilizam chaves numéricas longas e
@@ -119,6 +121,32 @@ public enum HashType {
   // --------------------------------------------------------------------------------
 
   DOUBLEHASH;
+
+  /*
+   * O método de hash duplo é uma técnica que usa duas funções hash diferentes para
+   * calcular o índice da tabela hash. Se h1(k) é a primeira função hash e h2(k) é a
+   * segunda função hash, o índice é calculado como:
+   * 
+   * h(k, i) = (h1(k) + i * h2(k)) mod m
+   * 
+   * Onde k é a chave, i é o número de tentativas, m é o tamanho da tabela hash e mod
+   * é o operador módulo.
+   * 
+   * Quando usar:
+   * 1 - Quando a função hash primária não é suficiente para evitar colisões.
+   * 
+   * 2 - Quando é necessário garantir uma boa dispersão das chaves, mesmo quando a
+   * tabela hash é grande.
+   * 
+   * 3 - Quando a função hash primária não é uniforme e a segunda função pode ajudar
+   * a distribuir as chaves de maneira mais uniforme.
+   * 
+   * Cenário ideal:
+   * Esse método é útil quando a dispersão das chaves é crítica e a função hash primária
+   * não é suficiente para evitar colisões e você precisa testar diferentes posições válidas.
+   * Assim você garante que para cada chave tenha M posições para ser inserida. Pode ser usado 
+   * em conjunto com outras técnicas de tratamento de colisões para garantir uma boa distribuição das chaves.
+   */
 
   // Essas informações acimas foram tiradas de pesquisas realizadas por mim, então podem estar erradas!
 

@@ -1,9 +1,14 @@
 package hashtable.structure.tablestructure;
 
+/*
+ * Alguns desses métodos podem não está corretos, pois não foram testados.
+ * Eu testei apenas os métodos da divisão, multiplicação e dispersão dupla.
+ */
+
 public abstract class HashFunctions {
 
   // Constantes para o método da multiplicação
-  private static final double A = 0.6180339887; // Uma constante irracional
+  private static final double A = 0.6180339887; // Razão áurea inversa
 
   // Método de hash por divisão
   public static int divisionHash(int key, int size) {
@@ -37,6 +42,7 @@ public abstract class HashFunctions {
     return hashValue % size;
   }
 
+  // Método de hash por análise de dígitos centrais
   public static int analysisHash(int key, int size) {
     String keyString = Integer.toString(key);
     int length = keyString.length();
@@ -75,6 +81,9 @@ public abstract class HashFunctions {
   }
 
   // Método de dispersão dupla
+  // Fiz a dispersão dupla usando a função hash da multiplicação,
+  // ao invés de usar a divisão. Usei ele para garantir melhor a dispersão.
+  // Já que as chaves de ordem são números inteiros sequenciais.
   public static int doubleHash(int key, int size, int attempt) {
     int hashA = multiplicationHash(key, size);
 

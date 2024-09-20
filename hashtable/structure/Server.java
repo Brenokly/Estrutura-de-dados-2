@@ -8,8 +8,18 @@ import hashtable.exceptions.*;
 import hashtable.structure.tablestructure.CollisionTreatment;
 import hashtable.structure.tablestructure.HashTable;
 import hashtable.structure.tablestructure.HashType;
-
 import java.util.List;
+
+/*
+ * Base de dados é uma tabela hashe com 127 posições iniciais,
+  * usando o método da divisão e redimensionável.
+  * As justificativas para essas escolhas
+  * estão nas suas devidas classes (HashTable, HashType, HashFunctions, CollisionTreatment).
+
+  * A cache é uma hashtable com 20 posições, não redimensionável.
+  * Está configurada para usar a função hash da dupla dispersão e tratamento de colisão por endereçamento aberto.
+  * As justificativas para essas escolhas estão nas suas devidas classes (Cache)
+ */
 
 public class Server {
   private HashTable dataBase;
@@ -17,16 +27,40 @@ public class Server {
   private int hits;
   private int misses;
 
+  // --------------------------------------------------------------------------------
+  // Construtores
+
   public Server() {
-    // Base de dados é uma tabela hashe com 127 posições iniciais,
-    // usando o método da divisão e redimensionável
-    // As justificativas para essas escolhas
-    // estão nas suas devidas classes (HashTable.java e Cache.java)
     this.dataBase = new HashTable(127, HashType.DIVISION, true, CollisionTreatment.ENCADEAMENTO_EXTERIOR);
     this.cache = new Cache();
     this.hits = 0;
     this.misses = 0;
   }
+
+  public Server(int capacidadeCache) {
+    this.dataBase = new HashTable(127, HashType.DIVISION, true, CollisionTreatment.ENCADEAMENTO_EXTERIOR);
+    this.cache = new Cache(capacidadeCache);
+    this.hits = 0;
+    this.misses = 0;
+  }
+
+  public Server(int capacidade, HashType hashType, boolean redimensionavel, CollisionTreatment collisionTreatment) {
+    this.dataBase = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
+    this.cache = new Cache();
+    this.hits = 0;
+    this.misses = 0;
+  }
+
+  public Server(int capacidade, HashType hashType, boolean redimensionavel, CollisionTreatment collisionTreatment,
+      Cache cache) {
+    this.dataBase = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
+    this.cache = cache;
+    this.hits = 0;
+    this.misses = 0;
+  }
+
+  // --------------------------------------------------------------------------------
+  // Métodos
 
   public OrderService searchOrderService(int codigo) throws ElementNotFoundException {
     OrderService ordem = cache.search(codigo); // Busca na cache

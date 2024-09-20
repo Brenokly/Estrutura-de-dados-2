@@ -559,7 +559,7 @@ public class HashTable {
       removeOpen(code);
     }
 
-    throw new InvalidOperationException("Elemento não existe!");
+    return;
   }
 
   // Método de remoção para o tratamento de colisão por endereçamento aberto
@@ -585,6 +585,8 @@ public class HashTable {
       previous = externalNode;
       externalNode = (NodeExternal) externalNode.next;
     }
+
+    throw new InvalidOperationException("Elemento não existe! Código: " + code);
   }
 
   // Método de remoção para o tratamento de colisão por encadeamento exterior
@@ -601,6 +603,8 @@ public class HashTable {
 
       hashCode = hash(code, ++attempt);
     }
+
+    throw new InvalidOperationException("Elemento não existe! Código: " + code);
   }
 
   public void printHashTable() {

@@ -97,7 +97,7 @@ public class Simulacao1 {
       System.out.println("\n=============================================");
       System.out.println("           Listagem de Ordens de Serviço");
       System.out.println("=============================================");
-      listarOrdensDeServico(cliente);
+      cliente.listPrintOrdersService();
 
       // Cadastrar duas novas ordens e listar novamente
       System.out.println("\n=============================================");
@@ -112,7 +112,7 @@ public class Simulacao1 {
       }
 
       System.out.println("\n>>> Listagem após o cadastro de duas novas ordens:");
-      listarOrdensDeServico(cliente);
+      cliente.listPrintOrdersService();
 
       // Alterar duas ordens e listar novamente
       System.out.println("\n=============================================");
@@ -134,7 +134,7 @@ public class Simulacao1 {
       System.out.println("=============================================");
 
       System.out.println("\n>>> Listagem após a alteração de duas ordens:");
-      listarOrdensDeServico(cliente);
+      cliente.listPrintOrdersService();
 
       // Remover duas ordens e listar novamente
       System.out.println("\n=============================================");
@@ -152,7 +152,7 @@ public class Simulacao1 {
       System.out.println("=============================================");
 
       System.out.println("\n>>> Listagem após a remoção de duas ordens:");
-      listarOrdensDeServico(cliente);
+      cliente.listPrintOrdersService();
 
       // Exibir estado da cache após as operações
       System.out.println("\n=============================================");
@@ -181,18 +181,5 @@ public class Simulacao1 {
       System.out.println("Mensagem: " + e.getMessage());
       System.out.println("---------------------------------------------");
     }
-  }
-
-  // Função auxiliar para listar as ordens de serviço de forma organizada
-  private static void listarOrdensDeServico(Cliente cliente) {
-    System.out.println("---------------------------------------------");
-    System.out.println("Código\tNome\t\tDescrição");
-    System.out.println("---------------------------------------------");
-
-    for (OrderService os : cliente.listOrdersService()) {
-      System.out.printf("%d\t%s\t\t%s\n", os.getCode(), os.getName(), os.getDescription());
-    }
-
-    System.out.println("---------------------------------------------");
   }
 }

@@ -88,7 +88,16 @@ public class Server {
   }
 
   public List<OrderService> listOrdersService() throws ElementNotFoundException {
-    return dataBase.list();
+    try {
+      return dataBase.list();
+    } catch (ElementNotFoundException e) {
+      // retorna uma lista vazia caso não tenha encontrado
+      return List.of();
+    }
+  }
+
+  public void listPrintOrdersService() {
+    dataBase.printHashTable();
   }
 
   public Boolean alterOrderService(OrderService orderService) throws InvalidOperationException {

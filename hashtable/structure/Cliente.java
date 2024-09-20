@@ -26,6 +26,10 @@ public class Cliente {
         return servidor.listOrdersService();
     }
 
+    public void listPrintOrdersService() {
+        servidor.listPrintOrdersService();
+    }
+
     public Boolean alterOrderService(OrderService orderService) {
         return servidor.alterOrderService(orderService);
     }

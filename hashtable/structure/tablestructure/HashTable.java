@@ -165,7 +165,7 @@ public class HashTable {
     NodeOpen[] oldTable = (NodeOpen[]) table;
     table = new NodeOpen[newSize];
     size = newSize;
-    count = 0; 
+    count = 0;
 
     // Rehash elements
     for (int i = 0; i < oldTable.length; i++) {
@@ -181,7 +181,7 @@ public class HashTable {
     NodeExternal[] oldTable = (NodeExternal[]) table;
     table = new NodeExternal[newSize];
     size = newSize;
-    count = 0; 
+    count = 0;
 
     // Rehash elements
     for (int i = 0; i < oldTable.length; i++) {
@@ -249,8 +249,9 @@ public class HashTable {
   public boolean isEmpty() {
     return count == 0;
   }
-  
-  // Método que verifica se a tabela foi redimensionada e reseta o atributo resized
+
+  // Método que verifica se a tabela foi redimensionada e reseta o atributo
+  // resized
   public boolean heWasResized() {
     boolean resizedAux = this.resized;
     this.resized = false;
@@ -358,7 +359,7 @@ public class HashTable {
     } else {
       this.table[hashCode] = new NodeOpen(); // Cria um novo nó
     }
-    
+
     this.table[hashCode].data = order;
 
     return codeExcluded;
@@ -604,6 +605,7 @@ public class HashTable {
 
   public void printHashTable() {
     if (isEmpty()) {
+      System.out.println("Tabela vazia");
       return;
     }
 
@@ -615,26 +617,33 @@ public class HashTable {
   }
 
   private void printExternal() {
+    System.out.println("========== External Hash Table ==========");
     for (int i = 0; i < table.length; i++) {
       Node current = table[i];
       if (current == null) {
         continue;
       }
       while (current != null) {
-        System.out.print(i + ": ");
-        System.out.print(current.data.getCode() + " -> ");
+        OrderService os = current.data; // Acessa os dados da ordem de serviço
+        System.out.printf("%d: [Código: %d, Nome: %s, Descrição: %s, Hora: %s] -> ",
+            i, os.getCode(), os.getName(), os.getDescription(), os.getRequestTime());
         current = ((NodeExternal) current).next;
       }
       System.out.println("null");
     }
+    System.out.println("=========================================");
   }
 
   private void printOpen() {
+    System.out.println("========== Open Hash Table ==========");
     for (int i = 0; i < table.length; i++) {
       if (table[i] != null) {
-        System.out.println(i + " --> " + table[i].data.getCode());
+        OrderService os = table[i].data; // Acessa os dados da ordem de serviço
+        System.out.printf("%d --> [Código: %d, Nome: %s, Descrição: %s, Hora: %s]\n",
+            i, os.getCode(), os.getName(), os.getDescription(), os.getRequestTime());
       }
     }
+    System.out.println("=======================================");
   }
 
   public String getTableState() {

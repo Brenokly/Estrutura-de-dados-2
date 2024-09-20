@@ -131,12 +131,13 @@ public class Server {
     String message = String.format(
         "[LOG ENTRY]\n----------------------------------------------------\n" +
             "Operacao realizada: %s\n" +
+            "Numero da Ordem de Servico: %d\n" +
             "Codigo da Ordem de Servico: %d\n" +
             "Status do Redimensionamento: %s\n" +
             "Tamanho atual da tabela hash: %d\n" +
             "Estado da Tabela Hash:\n%s" +
             "----------------------------------------------------",
-        operation.toString(), codigo, resizeStatus, currentSize, tableState);
+        operation.toString(), dataBase.getQuantityRecords(), codigo, resizeStatus, currentSize, tableState);
 
     try (FileWriter fw = new FileWriter("hashtable/ServerLog.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);

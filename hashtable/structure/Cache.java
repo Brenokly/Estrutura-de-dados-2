@@ -31,12 +31,12 @@ public class Cache {
   private int CAPACIDADE;
   private HashTable cache;
 
-  //--------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------
   // Construtores
 
   public Cache() {
-    this.cache = new HashTable(CAPACIDADE, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
     this.CAPACIDADE = 20;
+    this.cache = new HashTable(CAPACIDADE, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
   }
 
   public Cache(int capacidade) {
@@ -49,7 +49,7 @@ public class Cache {
     this.cache = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
   }
 
-  //--------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------
   // Métodos
 
   public OrderService search(int code) {

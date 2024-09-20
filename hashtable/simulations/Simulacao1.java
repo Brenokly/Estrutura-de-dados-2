@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import hashtable.structure.Server;
 import hashtable.structure.Cliente;
 import hashtable.structure.OrderService;
@@ -103,7 +102,7 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
 
       // -------------------------------------------------------------------------------
 
-      for (int i = 27; i <= 60; i++) {
+      for (int i = 20; i <= 400; i++) {
         auxi = cliente.searchOrderService(i);
       }
 
@@ -112,12 +111,15 @@ public class Simulacao1 { // Simulação 1: É uma simulação geral, com todas 
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 
+      // -------------------------------------------------------------------------------
+
       auxi = cliente.searchOrderService(40);
 
       // -------------------------------------------------------------------------------
 
       // Exibir estado da cache
-      System.out.println("Estado da Cache pós-cheia: " + servidor.getCache().size() + " elementos\n");
+      System.out.println("Estado da Cache pós-cheia: " + servidor.getCache().size()
+          + " elementos\n");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 

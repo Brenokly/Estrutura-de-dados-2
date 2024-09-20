@@ -5,6 +5,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import hashtable.exceptions.*;
+import hashtable.structure.tablestructure.CollisionTreatment;
+import hashtable.structure.tablestructure.HashTable;
+import hashtable.structure.tablestructure.HashType;
+
 import java.util.List;
 
 public class Server {
@@ -18,7 +22,7 @@ public class Server {
     // usando o método da divisão e redimensionável
     // As justificativas para essas escolhas
     // estão nas suas devidas classes (HashTable.java e Cache.java)
-    this.dataBase = new HashTable(127, HashType.DIVISION, true);
+    this.dataBase = new HashTable(127, HashType.DIVISION, true, CollisionTreatment.ENCADEAMENTO_EXTERIOR);
     this.cache = new Cache();
     this.hits = 0;
     this.misses = 0;

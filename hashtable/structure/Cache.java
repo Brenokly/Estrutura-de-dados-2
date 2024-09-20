@@ -1,6 +1,10 @@
 package hashtable.structure;
 
 import hashtable.exceptions.*;
+import hashtable.structure.tablestructure.CollisionTreatment;
+import hashtable.structure.tablestructure.HashTable;
+import hashtable.structure.tablestructure.HashType;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,7 +25,7 @@ public class Cache {
    */
 
   public Cache() {
-    this.cache = new HashTable(CAPACIDADE, HashType.MULTIPLICATION, false);
+    this.cache = new HashTable(CAPACIDADE, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
   }
 
   public OrderService search(int code) {

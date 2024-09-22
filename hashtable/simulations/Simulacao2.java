@@ -40,14 +40,14 @@ public class Simulacao2 {
       System.out.println(" Início da Inserção de 100 Ordens de Serviço");
       System.out.println("=============================================");
 
-      for (int i = 0; i < 100; i++) {
+      for (int i = 0; i < 192; i++) {
         OrderService os = new OrderService("Nome" + i, "Descrição" + i);
         cliente.registerOrderService(os);
       }
 
       // Log da inserção de 100 ordens de serviço
       String message = String.format("\n----------------------------------------------------\n"
-          + "Insercao de 100 Ordens de Servico concluida."
+          + "Insercao de 191 Ordens de Servico concluida."
           + "\n----------------------------------------------------\n");
       try (FileWriter fw = new FileWriter("hashtable/ServerLog.txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
@@ -59,7 +59,7 @@ public class Simulacao2 {
         e.printStackTrace();
       }
 
-      System.out.println("\n>>> 100 Ordens de Serviço cadastradas com sucesso!");
+      System.out.println("\n>>> 191 Ordens de Serviço cadastradas com sucesso!");
 
       System.out.println("\n=============================================");
       System.out.println("Estado da Cache antes das operações:");

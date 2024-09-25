@@ -37,7 +37,7 @@ public class Simulacao2 {
       OrderService auxi;
       // Adicionar 100 ordens de serviço iniciais
       System.out.println("=============================================");
-      System.out.println(" Início da Inserção de 100 Ordens de Serviço");
+      System.out.println(" Início da Inserção de 191 Ordens de Serviço");
       System.out.println("=============================================");
 
       for (int i = 0; i < 192; i++) {

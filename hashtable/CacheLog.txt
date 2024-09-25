@@ -968,3 +968,32 @@ Estado da Tabela Hash:
 18 --> 38
 19 --> 39
 ----------------------------------------------------
+[LOG ENTRY]
+----------------------------------------------------
+Operacao realizada: Insercao
+Codigo da Ordem de Servico: 55
+Status de Exclusao: Houve exclusao do elemento de código 35
+Status do Redimensionamento: Nao houve redimensionamento
+Quantidade de Elementos na cache: 20
+Estado da Tabela Hash:
+0 --> 20
+1 --> 21
+2 --> 22
+3 --> 23
+4 --> 24
+5 --> 25
+6 --> 26
+7 --> 27
+8 --> 28
+9 --> 29
+10 --> 30
+11 --> 31
+12 --> 32
+13 --> 33
+14 --> 34
+15 --> 55
+16 --> 36
+17 --> 37
+18 --> 38
+19 --> 39
+----------------------------------------------------

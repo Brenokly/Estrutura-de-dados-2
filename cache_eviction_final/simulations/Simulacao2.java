@@ -5,10 +5,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import hashtable.structure.Server;
-import hashtable.structure.Cliente;
-import hashtable.structure.OrderService;
-import hashtable.exceptions.*;
+import cache_eviction_final.structure.Server;
+import cache_eviction_final.structure.Cliente;
+import cache_eviction_final.structure.Message;
+import cache_eviction_final.structure.OrderService;
+import cache_eviction_final.exceptions.*;
 
 /*
  * Essa simulação foi criada para demonstrar o cache eviction na prática!
@@ -19,6 +20,7 @@ public class Simulacao2 {
     // Criar instâncias de Servidor e Cliente
     Server servidor = new Server();
     Cliente cliente = new Cliente(servidor);
+    Message message;
 
     // Limpar o arquivo de log antes de começar
     try {
@@ -42,18 +44,19 @@ public class Simulacao2 {
 
       for (int i = 0; i < 192; i++) {
         OrderService os = new OrderService("Nome" + i, "Descrição" + i);
-        cliente.registerOrderService(os);
+        message = new Message(os.toString()); // Passando a ordem de serviço como mensagem comprimida
+        cliente.registerOrderService(message);
       }
 
       // Log da inserção de 100 ordens de serviço
-      String message = String.format("\n----------------------------------------------------\n"
+      String messagem = String.format("\n----------------------------------------------------\n"
           + "Insercao de 191 Ordens de Servico concluida."
           + "\n----------------------------------------------------\n");
       try (FileWriter fw = new FileWriter("cache_eviction_final/ServerLog.txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
           PrintWriter out = new PrintWriter(bw)) {
         bw.newLine();
-        out.println(message);
+        out.println(messagem);
         bw.newLine();
       } catch (IOException e) {
         e.printStackTrace();
@@ -72,9 +75,9 @@ public class Simulacao2 {
       System.out.println("           Realizando Consultas");
       System.out.println("=============================================");
 
-      for (int i = 0; i < 20; i++) {
+      for (int i = 0; i < 30; i++) {
         System.out.printf("Consulta Ordem de Serviço com código %d\n", i);
-        auxi = cliente.searchOrderService(i);
+        auxi = cliente.searchOrderService(i); // Passando a ordem de serviço como mensagem comprimida
         System.out.printf("Ordem de Serviço encontrada:\nCódigo: %d, Nome: %s, Descrição: %s\n",
             auxi.getCode(), auxi.getName(), auxi.getDescription());
         System.out.println("---------------------------------------------");
@@ -90,7 +93,7 @@ public class Simulacao2 {
       // --------------------------------------------------------------------------------
       // Umas consultas apenas para checar o hit na cache
 
-      for (int i = 0; i < 20; i++) {
+      for (int i = 0; i < 30; i++) {
         cliente.searchOrderService(i);
       }
 

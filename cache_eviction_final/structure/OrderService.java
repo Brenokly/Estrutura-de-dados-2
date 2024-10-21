@@ -9,6 +9,12 @@ public class OrderService {
   private String description; // Descrição do serviço
   private LocalTime requestTime; // Hora da solicitação
 
+  public OrderService() {
+    this.name = "";
+    this.description = "";
+    this.requestTime = LocalTime.now().withSecond(0).withNano(0);
+  }
+
   public OrderService(String name, String description) {
     this.code = counterCode++;
     this.name = name;
@@ -24,6 +30,16 @@ public class OrderService {
     this.name = name;
     this.description = description;
     this.requestTime = LocalTime.now().withSecond(0).withNano(0);
+  }
+
+  public OrderService(int code, String name, String description, LocalTime requestTime) {
+    if (code > counterCode) {
+      counterCode = code;
+    }
+    this.code = code;
+    this.name = name;
+    this.description = description;
+    this.requestTime = requestTime;
   }
 
   /**
@@ -80,5 +96,19 @@ public class OrderService {
    */
   public void setRequestTime(LocalTime requestTime) {
     this.requestTime = requestTime;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("%d,%s,%s,%s", code, name, description, requestTime);
+  }
+
+  // Método para criar um objeto a partir de uma string
+  public void fromString(String orderString) {
+    String[] parts = orderString.split(","); // Supondo que os campos estejam separados por vírgulas
+    this.code = Integer.parseInt(parts[0].trim());
+    this.description = parts[1].trim();
+    this.name = parts[2].trim();
+    this.requestTime = LocalTime.parse(parts[3].trim()).withSecond(0).withNano(0);
   }
 }

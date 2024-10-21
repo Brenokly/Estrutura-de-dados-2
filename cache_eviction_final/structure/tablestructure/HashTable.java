@@ -28,72 +28,43 @@ package cache_eviction_final.structure.tablestructure;
  * Esse limite (fator de carga) eu testei vários valores! Com um fator de carga inferior a 1.0, a tabela hash ficou muito grande, mas
  * não apresenta NENHUMA COLISÃO. Com um fator de carga de 1.5, a tabela hash ficou com um tamanho bom e com poucas colisões.
  * 
- * A tabela foi construída para ser bem flexível e fácil de ser adaptada para outros problemas.
- * Ela pode ser "configurada" para usar outros métodos de função hash e tratamento de colisão.
+ * O maior diferencial dessa tabela para a anterior é que, como um dos requisitos era que, caso a tabela da base dados utilizasse encadeamento
+ * exterior, ela deveria ter uma lista-auto-ajustável. Isso meio que quebrou a ideia da tabela ser algo configurável, mas ainda assim, funciona!
  */
 
 import cache_eviction_final.exceptions.*;
 import cache_eviction_final.structure.OrderService;
-import cache_eviction_final.structure.tablestructure.Node.NodeExternal;
-import cache_eviction_final.structure.tablestructure.Node.NodeOpen;
+import cache_eviction_final.structure.listsAAtructure.LinkedListAACF;
 import java.util.List;
 import java.util.ArrayList;
 
 public class HashTable {
   // --------------------------------------------------------------------------------
+  // Atributos
 
   int size; // Tamanho da tabela hash
   HashType hashType; // Tipo de função hash que será usada na tabela
   boolean resized; // Atributo para indicar se a tabela foi redimensionada
-  boolean resizable; // Atributo para indicar se a tabela pode ou não ser redimensionada
   int count; // Quantidade atual de elementos na tabela
-  CollisionTreatment collisionTreatment; // Tipo de tratamento de colisão que será usado
-  Node[] table; // Tabela hash
+  LinkedListAACF[] table; // Tabela hash
 
   // --------------------------------------------------------------------------------
   // Construtores
 
-  public HashTable(int size, HashType hashType, boolean resizable, CollisionTreatment collisionTreatment) {
+  public HashTable(int size, HashType hashType) {
     this.size = size; // Tamanho da tabela
     this.hashType = hashType; // Tipo de função hash
-    this.resizable = resizable; // Se a tabela pode ser redimensionada
     this.resized = false; // Atributo para indicar se a tabela foi redimensionada
     this.count = 0; // Quantidade atual de elementos na tabela
-    this.collisionTreatment = collisionTreatment; // Tipo de tratamento de colisão
-
-    // Cria a tabela hash com base no tratamento de colisão
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      table = new NodeExternal[this.size]; // NodeExternal tem um atributo next
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      table = new NodeOpen[this.size]; // NodeOpen é um nó simples só com o atributo data
-    }
+    table = new LinkedListAACF[this.size]; // Inicializa a tabela hash
   }
-
-  // NodeExternal é um nó que tem um atributo next, criado para ser usado no
-  // encadeamento exterior.
-  // NodeOpen é um nó simples que tem apenas o atributo data, criado para ser
-  // usado no endereçamento aberto.
-  // Já que ele não precisa de um atributo next, pois o próximo elemento é
-  // encontrado através da função hash.
 
   public HashTable(int size) {
     this.size = size;
     this.hashType = HashType.DIVISION; // Por padrão, o método da divisão será usado
-    this.resizable = true; // Por padrão, a tabela pode ser redimensionada
     this.resized = false;
     this.count = 0;
-    this.collisionTreatment = CollisionTreatment.ENCADEAMENTO_EXTERIOR; // Padrão
-    table = new NodeExternal[this.size];
-  }
-
-  public HashTable(int size, boolean resizable) {
-    this.size = size;
-    this.hashType = HashType.DIVISION; // Por padrão, o método da divisão será usado
-    this.resizable = resizable;
-    this.resized = false;
-    this.count = 0;
-    this.collisionTreatment = CollisionTreatment.ENCADEAMENTO_EXTERIOR; // Padrão
-    table = new NodeExternal[this.size];
+    table = new LinkedListAACF[this.size]; // Inicializa a tabela hash
   }
 
   // --------------------------------------------------------------------------------
@@ -125,8 +96,8 @@ public class HashTable {
   // --------------------------------------------------------------------------------
   // Métodos de redimensionamento
 
+  // Método que redimensiona a tabela para um novo tamanho menor que o atual
   private void resizeDown() {
-    resized = true; // Atributo para indicar que a tabela foi redimensionada
     int newSize;
 
     if (hashType == HashType.DIVISION) {
@@ -135,15 +106,10 @@ public class HashTable {
       newSize = size / 2;
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      resizeExternal(newSize);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      resizeOpen(newSize);
-    }
+    resize(newSize);
   }
 
   private void resizeUp() {
-    resized = true; // Atributo para indicar que a tabela foi redimensionada
     int newSize;
 
     if (hashType == HashType.DIVISION) {
@@ -152,44 +118,23 @@ public class HashTable {
       newSize = size * 2;
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      resizeExternal(newSize);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      resizeOpen(newSize);
-    }
+    resize(newSize);
   }
 
-  // Redimensiona a tabela hash quando o tratamento de colisão é o endereçamento
-  // aberto
-  private void resizeOpen(int newSize) {
-    NodeOpen[] oldTable = (NodeOpen[]) table;
-    table = new NodeOpen[newSize];
-    size = newSize;
-    count = 0;
+  private void resize(int newSize) {
+    resized = true; // Atributo para indicar que a tabela foi redimensionada
+    size = newSize; // Atualiza o tamanho da tabela
 
-    // Rehash elements
+    LinkedListAACF[] oldTable = table;
+    table = new LinkedListAACF[size]; // Cria uma nova tabela com o novo tamanho
+
+    count = 0; // Reinicia o contador de elementos
+
+    // Reinsere os elementos na nova tabela
     for (int i = 0; i < oldTable.length; i++) {
       if (oldTable[i] != null) {
-        insert(oldTable[i].data);
-      }
-    }
-  }
-
-  // Redimensiona a tabela hash quando o tratamento de colisão é o encadeamento
-  // exterior
-  private void resizeExternal(int newSize) {
-    NodeExternal[] oldTable = (NodeExternal[]) table;
-    table = new NodeExternal[newSize];
-    size = newSize;
-    count = 0;
-
-    // Rehash elements
-    for (int i = 0; i < oldTable.length; i++) {
-      if (oldTable[i] instanceof NodeExternal) {
-        NodeExternal current = (NodeExternal) oldTable[i];
-        while (current != null) {
-          insert(current.data);
-          current = (NodeExternal) current.next;
+        for (int j = 0; j < oldTable[i].size(); j++) {
+          insert(oldTable[i].peek(j));
         }
       }
     }
@@ -265,19 +210,8 @@ public class HashTable {
 
     count = 0; // Reinicia o contador de elementos
 
-    // Itera sobre a tabela hash
-    for (int i = 0; i < this.size; i++) {
-      Node no = this.table[i];
-
-      // Caso o node seja um NodeExternal, percorre a lista encadeada
-      while (no != null && no instanceof Node.NodeExternal) {
-        Node next = ((Node.NodeExternal) no).next;
-        no = null; // Libera o nó atual
-        no = next; // Vai para o próximo nó na lista encadeada
-      }
-
-      // Caso seja NodeOpen, simplesmente remove
-      this.table[i] = null;
+    for (int i = 0; i < table.length; i++) {
+      table[i] = null; // Limpa a tabela hash
     }
   }
 
@@ -286,83 +220,26 @@ public class HashTable {
 
   public void insert(OrderService order) {
     // Verifica se a tabela precisa ser redimensionada
-    if (resizable && (((double) count) / ((double) size)) > 1.5f) {
+    if ((((double) count) / ((double) size)) > 2.0f) {
       resizeUp();
     }
 
-    // Verifica o tipo de tratamento de colisão e chamma o método certo
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      insertExternal(order);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      insertOpen(order);
+    // Calcula o hash do elemento
+    int hashCode = hash(order.getCode());
+
+    // Se a posição da tabela estiver vazia, cria uma nova lista e insere o elemento
+    if (table[hashCode] == null) {
+      table[hashCode] = new LinkedListAACF();
+      table[hashCode].insertLast(order);
+      count++;
+      return;
+    } else {
+      // Se a posição da tabela não estiver vazia, insere o elemento no início da
+      // lista
+      table[hashCode].insertLast(order);
     }
 
     count++;
-  }
-
-  // Método de inserção para o tratamento de colisão por endereçamento aberto
-  private void insertOpen(OrderService order) {
-    int attempt = 0;
-    int hashCode = hash(order.getCode(), attempt);
-
-    while (this.table[hashCode] != null) {
-      if (this.table[hashCode].data == order) {
-        break;
-      }
-
-      hashCode = hash(order.getCode(), ++attempt);
-    }
-
-    if (this.table[hashCode] == null) {
-      this.table[hashCode] = new NodeOpen();
-      this.table[hashCode].data = order;
-    }
-  }
-
-  // Método de inserção para o tratamento de colisão por encadeamento exterior
-  private void insertExternal(OrderService order) {
-    int hashCode = hash(order.getCode());
-    Node currentNode = this.table[hashCode];
-
-    // Tratamento por encadeamento exterior (lista ligada)
-    NodeExternal externalNode = (NodeExternal) currentNode;
-
-    // Percorre a lista encadeada para verificar duplicatas
-    while (externalNode != null) {
-      if (externalNode.data.equals(order)) {
-        return; // Não insere duplicatas
-      }
-      externalNode = (NodeExternal) externalNode.next;
-    }
-
-    // Insere o novo nó no início da lista encadeada
-    NodeExternal nodeToInsert = new NodeExternal(order);
-    nodeToInsert.next = (NodeExternal) this.table[hashCode]; // Adiciona no início
-    this.table[hashCode] = nodeToInsert;
-  }
-
-  // Método de inserção exclusiva para o caso da tabela não ser redimensionável
-  // e não aceitar colisões. Esse método procura um espaço vazio na tabela e
-  // insere o novo elemento. Se não tiver espaço, ele remove o elemento que está
-  // no índice calculado e insere o novo elemento. Retorna o código do elemento
-  // excluído.
-  public int exclusiveInsertion(OrderService order) {
-    if (resizable && (((double) count) / ((double) size)) > 1.5) {
-      resizeUp();
-    }
-
-    int hashCode = hash(order.getCode());
-    int codeExcluded = -1; // -1 indica que não houve exclusão
-
-    if (this.table[hashCode] != null) {
-      codeExcluded = this.table[hashCode].data.getCode(); // código do excluído
-    } else {
-      this.table[hashCode] = new NodeOpen(); // Cria um novo nó
-    }
-
-    this.table[hashCode].data = order;
-
-    return codeExcluded;
   }
 
   public OrderService search(int code) throws ElementNotFoundException {
@@ -370,51 +247,13 @@ public class HashTable {
       throw new ElementNotFoundException("Tabela vazia");
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      return searchExternal(code);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      return searchOpen(code);
+    int hashCode = hash(code);
+
+    if (table[hashCode] != null) {
+      return table[hashCode].search(code);
     }
 
     throw new ElementNotFoundException("Elemento não encontrado");
-  }
-
-  // Método de busca para o tratamento de colisão por encadeamento exterior
-  private OrderService searchExternal(int code) {
-    int hashCode = hash(code);
-    Node currentNode = this.table[hashCode];
-
-    // Tratamento por encadeamento exterior (lista ligada)
-    NodeExternal externalNode = (NodeExternal) currentNode;
-
-    while (externalNode != null) {
-      if (externalNode.data.getCode() == code) {
-        return externalNode.data;
-      }
-      externalNode = (NodeExternal) externalNode.next;
-    }
-
-    return null;
-  }
-
-  // Método de busca para o tratamento de colisão por endereçamento aberto
-  private OrderService searchOpen(int code) {
-    int attempt = 0;
-    int hashCode = hash(code, attempt);
-
-    // Limitamos o número de tentativas ao tamanho da tabela, para evitar loops
-    while (this.table[hashCode] != null && attempt < size + 1) {
-      // Verifica se o código é o mesmo
-      if (this.table[hashCode].data.getCode() == code) {
-        return this.table[hashCode].data;
-      }
-
-      // Incrementa a tentativa e recalcula o índice
-      hashCode = hash(code, ++attempt);
-    }
-
-    // Se não for encontrado, retorna null
-    return null;
   }
 
   public void alter(OrderService orderChanged) throws ElementNotFoundException {
@@ -422,68 +261,27 @@ public class HashTable {
       throw new ElementNotFoundException("Tabela vazia");
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      alterExternal(orderChanged);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      alterOpen(orderChanged);
-    }
-  }
-
-  // Método de alteração para o tratamento de colisão por endereçamento aberto
-  private void alterExternal(OrderService orderChanged) {
     int hashCode = hash(orderChanged.getCode());
-    Node newOrder = this.table[hashCode];
 
-    // Tratamento por encadeamento exterior (lista ligada)
-    NodeExternal externalNode = (NodeExternal) newOrder;
-
-    while (newOrder != null) {
-      if (externalNode.data.getCode() == orderChanged.getCode()) {
-        externalNode.data = orderChanged;
-        return;
-      }
-      externalNode = (NodeExternal) externalNode.next;
+    if (table[hashCode] != null) {
+      table[hashCode].alter(orderChanged);
+      return;
     }
-  }
 
-  // Método de alteração para o tratamento de colisão por encadeamento exterior
-  private void alterOpen(OrderService orderChanged) {
-    int attempt = 0;
-    int hashCode = hash(orderChanged.getCode(), attempt);
-
-    while (this.table[hashCode] != null) {
-      if (this.table[hashCode].data.getCode() == orderChanged.getCode()) {
-        this.table[hashCode].data = orderChanged;
-        return;
-      }
-
-      hashCode = hash(orderChanged.getCode(), ++attempt);
-    }
+    throw new ElementNotFoundException("Tabela vazia");
   }
 
   public List<OrderService> list() throws ElementNotFoundException {
-    List<OrderService> list = new ArrayList<OrderService>();
-
     if (isEmpty()) {
       throw new ElementNotFoundException("Tabela vazia");
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      for (int i = 0; i < table.length; i++) {
-        Node current = table[i];
-        if (current == null) {
-          continue;
-        }
+    List<OrderService> list = new ArrayList<OrderService>();
 
-        while (current != null) {
-          list.add(current.data);
-          current = ((NodeExternal) current).next;
-        }
-      }
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      for (int i = 0; i < table.length; i++) {
-        if (table[i] != null) {
-          list.add(table[i].data);
+    for (int i = 0; i < table.length; i++) {
+      if (table[i] != null) {
+        for (int j = 0; j < table[i].size(); j++) {
+          list.add(table[i].peek(j));
         }
       }
     }
@@ -491,120 +289,29 @@ public class HashTable {
     return list;
   }
 
-  public boolean contains(int code) {
-    if (isEmpty()) {
-      return false;
-    }
-
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      return containsExternal(code);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      return containsOpen(code);
-    }
-
-    return false;
-  }
-
-  // Método que verifica se um elemento existe na tabela hash
-  private boolean containsOpen(int code) {
-    int attempt = 0;
-    int hashCode = hash(code, attempt);
-
-    while (this.table[hashCode] != null) {
-      if (this.table[hashCode].data.getCode() == code) {
-        return true;
-      }
-
-      hashCode = hash(code, ++attempt);
-    }
-
-    return false;
-  }
-
-  // Método que verifica se um elemento existe na tabela hash
-  private boolean containsExternal(int code) {
-    int hashCode = hash(code);
-
-    if (table[hashCode] == null) {
-      return false;
-    }
-
-    Node newOrder = this.table[hashCode];
-
-    // Tratamento por encadeamento exterior (lista ligada)
-    NodeExternal externalNode = (NodeExternal) newOrder;
-
-    while (newOrder != null) {
-      if (externalNode.data.getCode() == code) {
-        return true;
-      }
-      externalNode = (NodeExternal) externalNode.next;
-    }
-
-    return false;
-  }
-
   public void remove(int code) throws InvalidOperationException {
     if (isEmpty()) {
       throw new InvalidOperationException("Elemento não existe! Tabela está vazia");
     }
 
-    if (resizable && (((double) count) / ((double) size)) < 0.3) {
+    if ((((double) count) / ((double) size)) < 0.3f) {
       resizeDown();
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      removeExternal(code);
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      removeOpen(code);
-    }
-
-    return;
-  }
-
-  // Método de remoção para o tratamento de colisão por endereçamento aberto
-  private void removeExternal(int code) {
     int hashCode = hash(code);
-    Node newOrder = this.table[hashCode];
-    NodeExternal previous = null;
 
-    // Tratamento por encadeamento exterior (lista ligada)
-    NodeExternal externalNode = (NodeExternal) newOrder;
+    if (table[hashCode] != null) {
+      table[hashCode].remove(code);
+      count--;
 
-    while (newOrder != null) {
-      if (externalNode.data.getCode() == code) {
-        if (previous == null) {
-          this.table[hashCode] = externalNode.next;
-        } else {
-          previous.next = externalNode.next;
-        }
-        count--;
-        return;
+      if (table[hashCode].isEmpty()) {
+        table[hashCode] = null;
       }
 
-      previous = externalNode;
-      externalNode = (NodeExternal) externalNode.next;
+      return;
     }
 
-    throw new InvalidOperationException("Elemento não existe! Código: " + code);
-  }
-
-  // Método de remoção para o tratamento de colisão por encadeamento exterior
-  private void removeOpen(int code) {
-    int attempt = 0;
-    int hashCode = hash(code, attempt);
-
-    while (this.table[hashCode] != null) {
-      if (this.table[hashCode].data.getCode() == code) {
-        this.table[hashCode] = null;
-        count--;
-        return;
-      }
-
-      hashCode = hash(code, ++attempt);
-    }
-
-    throw new InvalidOperationException("Elemento não existe! Código: " + code);
+    throw new InvalidOperationException("Elemento não existe! Tabela está vazia");
   }
 
   public void printHashTable() {
@@ -613,41 +320,18 @@ public class HashTable {
       return;
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      printExternal();
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      printOpen();
-    }
-  }
-
-  private void printExternal() {
-    System.out.println("========== External Hash Table ==========");
-    for (int i = 0; i < table.length; i++) {
-      Node current = table[i];
-      if (current == null) {
-        continue;
-      }
-      while (current != null) {
-        OrderService os = current.data; // Acessa os dados da ordem de serviço
-        System.out.printf("%d: [Código: %d, Nome: %s, Descrição: %s, Hora: %s] -> ",
-            i, os.getCode(), os.getName(), os.getDescription(), os.getRequestTime());
-        current = ((NodeExternal) current).next;
-      }
-      System.out.println("null");
-    }
-    System.out.println("=========================================");
-  }
-
-  private void printOpen() {
-    System.out.println("========== Open Hash Table ==========");
+    System.out.println("========== Hash Table ==========");
     for (int i = 0; i < table.length; i++) {
       if (table[i] != null) {
-        OrderService os = table[i].data; // Acessa os dados da ordem de serviço
-        System.out.printf("%d --> [Código: %d, Nome: %s, Descrição: %s, Hora: %s]\n",
-            i, os.getCode(), os.getName(), os.getDescription(), os.getRequestTime());
+        for (int j = 0; j < table[i].size(); j++) {
+          System.out.printf("%d: [Código: %d, Nome: %s, Descrição: %s, Hora: %s] -> ",
+              i, table[i].peek(j).getCode(), table[i].peek(j).getName(), table[i].peek(j).getDescription(),
+              table[i].peek(j).getRequestTime());
+        }
+        System.out.println("null");
       }
     }
-    System.out.println("=======================================");
+    System.out.println("=========================================");
   }
 
   public String getTableState() {
@@ -657,24 +341,18 @@ public class HashTable {
       return "Tabela vazia";
     }
 
-    if (collisionTreatment == CollisionTreatment.ENCADEAMENTO_EXTERIOR) {
-      for (int i = 0; i < table.length; i++) {
-        Node current = table[i];
-        if (current == null) {
-          continue;
+    sb.append("Estado da Tabela Hash:\n");
+    for (int i = 0; i < table.length; i++) {
+      if (table[i] != null && table[i].size() > 0) {
+        sb.append("Indice ").append(i).append(": ");
+        for (int j = 0; j < table[i].size(); j++) {
+          OrderService order = table[i].peek(j);
+          sb.append("[Código: ").append(order.getCode())
+              .append(", Nome: ").append(order.getName())
+              .append(", Descrição: ").append(order.getDescription())
+              .append(", Hora: ").append(order.getRequestTime()).append("] ");
         }
-        while (current != null) {
-          sb.append(i + ": ");
-          sb.append(current.data.getCode() + " -> ");
-          current = ((NodeExternal) current).next;
-        }
-        sb.append("null\n");
-      }
-    } else if (collisionTreatment == CollisionTreatment.ENDERECAMENTO_ABERTO) {
-      for (int i = 0; i < table.length; i++) {
-        if (table[i] != null) {
-          sb.append(i + " --> " + table[i].data.getCode() + "\n");
-        }
+        sb.append("\n");
       }
     }
 

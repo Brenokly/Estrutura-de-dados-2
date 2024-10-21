@@ -1,52 +1,40 @@
 package cache_eviction_final.structure;
 
 import cache_eviction_final.exceptions.*;
-import cache_eviction_final.structure.tablestructure.CollisionTreatment;
-import cache_eviction_final.structure.tablestructure.HashTable;
-import cache_eviction_final.structure.tablestructure.HashType;
+import cache_eviction_final.structure.listsAAtructure.LinkedListAAMF;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 /*
- * Classe Cache que é responsável por armazenar os elementos da tabela Hash
- * para que a busca seja mais rápida e eficiente.
+ * A classe Cache é responsável por gerenciar a cache de ordens de serviço.
+ * Ela foi implementada utilizando uma lista duplamente encadeada auto-ajustável.
+ * A cache possui uma capacidade máxima, e quando atinge essa capacidade, a política de cache eviction
+ * LRU (Least Recently Used) é aplicada, removendo o último elemento da cache.
  * 
- * A cache possui uma capacidade máxima de 20 elementos e utiliza a tabela Hash
- * para armazenar os elementos.
+ * Porque escolhi o LRU?
  * 
- * A hashTable da cach foi configurada para utilizar o método de hash duplo (dispersão dupla),
- * não permitir redimensionamento, e tratar colisões por endereçamento aberto.
- * 
- * Foram os métodos que eu achei mais apropriados para o caso da cache que não deve ser redimensionada.
- * Dessa forma ela não possuí colisões nenhuma. E quando a cache está cheia, a inserção é feita de forma exclusiva.
- * Então é como se a política de cache eviction fosse uma random! Já que não tem como advinhar qual elemento será removido.
- * 
- * Pois o elemento removido depende do código do elemento que será inserido. Para qual posição ele será direcionado?
- * Não dá para advinhar. Então é como se fosse random.
- */
+ * Como se trata de uma lista auto-ajustável, que move os elementos mais acessados para o início, 
+ * fica mais fácil de implementar a política de cache eviction LRU, já que o último elemento da lista
+ * é, graças a auto-ajustabilidade, o menos acessado.
+*/
 
 public class Cache {
   private int CAPACIDADE;
-  private HashTable cache;
+  private LinkedListAAMF cache;
 
   // --------------------------------------------------------------------------------
   // Construtores
 
   public Cache() {
-    this.CAPACIDADE = 20;
-    this.cache = new HashTable(CAPACIDADE, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
+    this.CAPACIDADE = 30;
+    cache = new LinkedListAAMF();
   }
 
   public Cache(int capacidade) {
     this.CAPACIDADE = capacidade;
-    this.cache = new HashTable(capacidade, HashType.DOUBLEHASH, false, CollisionTreatment.ENDERECAMENTO_ABERTO);
-  }
-
-  public Cache(int capacidade, HashType hashType, boolean redimensionavel, CollisionTreatment collisionTreatment) {
-    this.CAPACIDADE = capacidade;
-    this.cache = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
+    cache = new LinkedListAAMF();
   }
 
   // --------------------------------------------------------------------------------
@@ -54,29 +42,27 @@ public class Cache {
 
   public OrderService search(int code) {
     try {
-      return cache.search(code);
+      OrderService order = cache.search(code);
+
+      logState(TypeOfOperation.SEARCH, code, false, -1);
+
+      return order;
     } catch (ElementNotFoundException e) {
       return null;
     }
   }
 
   public void insert(OrderService orderService) {
-    if (cache.getQuantityRecords() == CAPACIDADE) {
-      int codeExcluded = cache.exclusiveInsertion(orderService);
-
-      logState(TypeOfOperation.INSERT, orderService.getCode(), true, codeExcluded);
-
-      /*
-       * Uma inserção exclusiva é feita quando a cache está cheia.
-       * Ela remove o elemento que está ocupando a posição do elemento que será
-       * inserido e insere o novo elemento no lugar dele, removendo o antigo.
-       */
-
-    } else {
-      cache.insert(orderService);
-
-      logState(TypeOfOperation.INSERT, orderService.getCode(), false, -1);
+    if (cache.size() == CAPACIDADE) {
+      // Remove o último elemento da cache
+      // Já que estamos usando a política de cache eviction LRU
+      OrderService removed = cache.removeLast();
+      logState(TypeOfOperation.INSERT, orderService.getCode(), true, removed.getCode());
     }
+
+    // Insere a nova ordem de serviço
+    cache.insertLast(orderService);
+    logState(TypeOfOperation.INSERT, orderService.getCode(), false, -1);
   }
 
   public boolean alter(OrderService orderService) {
@@ -104,21 +90,18 @@ public class Cache {
   }
 
   private void logState(TypeOfOperation operation, int code, boolean exclusion, int codeExcluded) {
-    String resizeStatus = cache.heWasResized() ? "Houve redimensionamento" : "Nao houve redimensionamento";
-    int currentElements = cache.getQuantityRecords();
+    String listState = cache.getListState();
     String exclusionState = exclusion ? "Houve exclusao do elemento de código " + codeExcluded : "Nao houve exclusao";
-    String tableState = cache.getTableState(); // Adicione a chamada ao método getTableState()
 
     String message = String.format(
         "[LOG ENTRY]\n----------------------------------------------------\n" +
+            "Codigo da Ordem de Servico: %d.\n" +
             "Operacao realizada: %s\n" +
-            "Codigo da Ordem de Servico: %d\n" +
             "Status de Exclusao: %s\n" +
-            "Status do Redimensionamento: %s\n" +
-            "Quantidade de Elementos na cache: %d\n" +
-            "Estado da Tabela Hash:\n%s" +
+            "Quantidade de Elementos na cache após a operacao: %d\n" +
+            "Estado da cache:\n%s" +
             "----------------------------------------------------",
-        operation.toString(), code, exclusionState, resizeStatus, currentElements, tableState);
+            code, operation.toString(),  exclusionState, cache.size(), listState);
 
     try (FileWriter fw = new FileWriter("cache_eviction_final/CacheLog.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -130,22 +113,14 @@ public class Cache {
   }
 
   public void show() {
-    cache.printHashTable();
+    cache.show();
   }
 
   public int size() {
-    return cache.getQuantityRecords();
-  }
-
-  public void clear() {
-    cache.clear();
+    return cache.size();
   }
 
   public boolean isEmpty() {
     return cache.isEmpty();
-  }
-
-  public boolean contains(int code) {
-    return cache.contains(code);
   }
 }

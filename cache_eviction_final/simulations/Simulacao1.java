@@ -5,10 +5,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import hashtable.structure.Server;
-import hashtable.structure.Cliente;
-import hashtable.structure.OrderService;
-import hashtable.exceptions.*;
+import cache_eviction_final.structure.Server;
+import cache_eviction_final.structure.Cliente;
+import cache_eviction_final.structure.Message;
+import cache_eviction_final.structure.OrderService;
+import cache_eviction_final.exceptions.*;
 
 /*
  * Essa simulação foi criada com base na simulação pedida no documento!
@@ -30,6 +31,7 @@ public class Simulacao1 {
     // Criar instâncias de Servidor e Cliente
     Server servidor = new Server();
     Cliente cliente = new Cliente(servidor);
+    Message message;
 
     // Limpar o arquivo de log antes de começar
     try {
@@ -52,18 +54,19 @@ public class Simulacao1 {
 
       for (int i = 0; i < 70; i++) {
         OrderService os = new OrderService("Nome" + i, "Descrição" + i);
-        cliente.registerOrderService(os);
+        message = new Message(os.toString()); // Passando a ordem de serviço como mensagem comprimida
+        cliente.registerOrderService(message);
       }
 
       // Log da inserção de 70 ordens de serviço
-      String message = String.format("\n----------------------------------------------------\n"
+      String messagem = String.format("\n----------------------------------------------------\n"
           + "Insercao de 70 Ordens de Servico concluida."
           + "\n----------------------------------------------------\n");
       try (FileWriter fw = new FileWriter("cache_eviction_final/ServerLog.txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
           PrintWriter out = new PrintWriter(bw)) {
         bw.newLine();
-        out.println(message);
+        out.println(messagem);
         bw.newLine();
       } catch (IOException e) {
         e.printStackTrace();
@@ -82,7 +85,7 @@ public class Simulacao1 {
 
       for (int i = 0; i < 3; i++) {
         System.out.printf("Consulta Ordem de Serviço com código %d\n", i);
-        OrderService auxi = cliente.searchOrderService(i);
+        OrderService auxi = cliente.searchOrderService(i); // Passando a ordem de serviço como mensagem comprimida
         System.out.printf("Ordem de Serviço encontrada:\nCódigo: %d, Nome: %s, Descrição: %s\n",
             auxi.getCode(), auxi.getName(), auxi.getDescription());
 
@@ -106,7 +109,8 @@ public class Simulacao1 {
 
       for (int i = 70; i < 72; i++) {
         OrderService os = new OrderService("NomeNovo" + i, "DescriçãoNova" + i);
-        cliente.registerOrderService(os);
+        message = new Message(os.toString()); // Passando a ordem de serviço como mensagem comprimida
+        cliente.registerOrderService(message);
         System.out.printf("Ordem de Serviço %d cadastrada: Nome: %s, Descrição: %s\n",
             os.getCode(), os.getName(), os.getDescription());
       }
@@ -120,10 +124,9 @@ public class Simulacao1 {
       System.out.println("=============================================");
 
       for (int i = 0; i < 2; i++) {
-        OrderService os = cliente.searchOrderService(i);
-        os.setName("NomeAlterado" + i);
-        os.setDescription("DescriçãoAlterada" + i);
-        cliente.alterOrderService(os);
+        OrderService os = new OrderService(i, "NomeAlterado" + i, "DescriçãoAlterada" + i);
+        message = new Message(os.toString()); // Passando a ordem de serviço como mensagem comprimida
+        cliente.alterOrderService(message);
         System.out.printf("Ordem de Serviço %d alterada: Novo Nome: %s, Nova Descrição: %s\n",
             os.getCode(), os.getName(), os.getDescription());
       }
@@ -164,6 +167,8 @@ public class Simulacao1 {
       // Exibir hits e misses
       System.out.println("\n>>> Resultados finais:");
       System.out.printf("Hits: %d\nMisses: %d\n", servidor.getHits(), servidor.getMisses());
+
+      System.out.printf("---------------------------------------------\n");
 
     } catch (ElementNotFoundException e) {
       System.out.println("---------------------------------------------");

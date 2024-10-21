@@ -4,21 +4,23 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalTime;
+
 import cache_eviction_final.exceptions.*;
-import cache_eviction_final.structure.tablestructure.CollisionTreatment;
 import cache_eviction_final.structure.tablestructure.HashTable;
 import cache_eviction_final.structure.tablestructure.HashType;
 import java.util.List;
 
 /*
- * Base de dados é uma tabela hashe com 127 posições iniciais,
+  * Base de dados é uma tabela hashe com 127 posições iniciais,
   * usando o método da divisão e redimensionável.
   * As justificativas para essas escolhas
   * estão nas suas devidas classes (HashTable, HashType, HashFunctions, CollisionTreatment).
 
-  * A cache é uma hashtable com 20 posições, não redimensionável.
-  * Está configurada para usar a função hash da dupla dispersão e tratamento de colisão por endereçamento aberto.
-  * As justificativas para essas escolhas estão nas suas devidas classes (Cache)
+  * A cache é uma lista auto-ajustável com 30 posições, não redimensionável.
+  * Ela é auto-ajustável e usa o algoritmo LRU (Least Recently Used) para remover o elemento menos recentemente usado
+  * quando a lista está cheia e um novo elemento é inserido. E para o ajuste dos elementos, foi usado o algoritmo
+  * MF (Move to Front), que move o elemento mais recentemente usado para a primeira posição da lista.
  */
 
 public class Server {
@@ -31,29 +33,28 @@ public class Server {
   // Construtores
 
   public Server() {
-    this.dataBase = new HashTable(127, HashType.DIVISION, true, CollisionTreatment.ENCADEAMENTO_EXTERIOR);
+    this.dataBase = new HashTable(127, HashType.DIVISION);
     this.cache = new Cache();
     this.hits = 0;
     this.misses = 0;
   }
 
   public Server(int capacidadeCache) {
-    this.dataBase = new HashTable(127, HashType.DIVISION, true, CollisionTreatment.ENCADEAMENTO_EXTERIOR);
+    this.dataBase = new HashTable(127, HashType.DIVISION);
     this.cache = new Cache(capacidadeCache);
     this.hits = 0;
     this.misses = 0;
   }
 
-  public Server(int capacidade, HashType hashType, boolean redimensionavel, CollisionTreatment collisionTreatment) {
-    this.dataBase = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
+  public Server(int capacidade, HashType hashType) {
+    this.dataBase = new HashTable(capacidade, hashType);
     this.cache = new Cache();
     this.hits = 0;
     this.misses = 0;
   }
 
-  public Server(int capacidade, HashType hashType, boolean redimensionavel, CollisionTreatment collisionTreatment,
-      Cache cache) {
-    this.dataBase = new HashTable(capacidade, hashType, redimensionavel, collisionTreatment);
+  public Server(int capacidade, HashType hashType, Cache cache) {
+    this.dataBase = new HashTable(capacidade, hashType);
     this.cache = cache;
     this.hits = 0;
     this.misses = 0;
@@ -79,7 +80,18 @@ public class Server {
     return ordem; // Retorna a ordem
   }
 
-  public Boolean registerOrderService(OrderService orderService) {
+  public Boolean registerOrderService(Message order) {
+    String[] parts = order.decompress().split(","); // Descomprime a mensagem e separa os campos
+
+    // Converte os campos para os tipos corretos
+    int code = Integer.parseInt(parts[0]); // Converte o primeiro elemento para int
+    String name = parts[1]; // Segundo elemento é o nome
+    String description = parts[2]; // Terceiro elemento é a descrição
+    LocalTime requestTime = LocalTime.parse(parts[3]).withSecond(0).withNano(0); // Quarto elemento é o horário
+
+    // Cria a ordem de serviço
+    OrderService orderService = new OrderService(code, name, description, requestTime);
+
     dataBase.insert(orderService);
 
     logState(TypeOfOperation.INSERT, orderService.getCode());
@@ -87,12 +99,24 @@ public class Server {
     return true;
   }
 
-  public List<OrderService> listOrdersService() throws ElementNotFoundException {
+  public Message listOrdersService() {
     try {
-      return dataBase.list();
+      List<OrderService> orders = dataBase.list(); // Obtém a lista de ordens de serviço
+      StringBuilder ordersString = new StringBuilder();
+
+      // Converte cada ordem de serviço para string e adiciona ao StringBuilder
+      for (OrderService order : orders) {
+        ordersString.append(order.toString()).append("\n"); // Adiciona nova linha para separar as ordens
+      }
+
+      // Cria uma mensagem a partir da string da lista de ordens
+      Message message = new Message(ordersString.toString()); // Comprime a string
+      return message; // Retorna a mensagem comprimida
+
     } catch (ElementNotFoundException e) {
-      // retorna uma lista vazia caso não tenha encontrado
-      return List.of();
+      // Retorna uma mensagem com informação de erro
+      Message errorMessage = new Message("Nenhuma ordem de serviço encontrada.");
+      return errorMessage; // Retorna a mensagem de erro
     }
   }
 
@@ -100,7 +124,19 @@ public class Server {
     dataBase.printHashTable();
   }
 
-  public Boolean alterOrderService(OrderService orderService) throws InvalidOperationException {
+  public Boolean alterOrderService(Message order) throws InvalidOperationException {
+    // Descomprime a mensagem e separa os campos
+    String[] parts = order.decompress().split(",");
+
+    // Converte os campos para os tipos corretos
+    int code = Integer.parseInt(parts[0]); // Converte o primeiro elemento para int
+    String name = parts[1]; // Segundo elemento é o nome
+    String description = parts[2]; // Terceiro elemento é a descrição
+    LocalTime requestTime = LocalTime.parse(parts[3]); // Quarto elemento é o horário
+
+    // Cria a ordem de serviço
+    OrderService orderService = new OrderService(code, name, description, requestTime);
+
     try {
       dataBase.alter(orderService);
     } catch (ElementNotFoundException e) {
@@ -139,14 +175,14 @@ public class Server {
 
     String message = String.format(
         "[LOG ENTRY]\n----------------------------------------------------\n" +
+            "Codigo da Ordem de Servico: %d.\n" +
             "Operacao realizada: %s\n" +
-            "Numero da Ordem de Servico: %d\n" +
-            "Codigo da Ordem de Servico: %d\n" +
+            "Numero de Ordem de Servicos: %d\n" +
             "Status do Redimensionamento: %s\n" +
             "Tamanho atual da tabela hash: %d\n" +
             "Estado da Tabela Hash:\n%s" +
             "----------------------------------------------------",
-        operation.toString(), dataBase.getQuantityRecords(), codigo, resizeStatus, currentSize, tableState);
+        codigo, operation.toString(), dataBase.getQuantityRecords(), resizeStatus, currentSize, tableState);
 
     try (FileWriter fw = new FileWriter("cache_eviction_final/ServerLog.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);

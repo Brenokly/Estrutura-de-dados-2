@@ -2,7 +2,7 @@ package cache_eviction_final.compression;
 
 import java.util.HashMap;
 import java.util.Map;
-import cache_eviction_final.structure.listPstructure.MinHeap;
+import cache_eviction_final.structure.listPstructure.MinHeap; 
 
 // Classe responsável por construir e manipular a árvore de Huffman
 public class HuffmanTree {

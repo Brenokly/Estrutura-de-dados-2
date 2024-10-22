@@ -61,7 +61,7 @@ public class Cache {
     }
 
     // Insere a nova ordem de serviço
-    cache.insertLast(orderService);
+    cache.insertFirst(orderService);
     logState(TypeOfOperation.INSERT, orderService.getCode(), false, -1);
   }
 
@@ -101,7 +101,7 @@ public class Cache {
             "Quantidade de Elementos na cache após a operacao: %d\n" +
             "Estado da cache:\n%s" +
             "----------------------------------------------------",
-            operation.toString(), code, exclusionState, cache.size(), listState);
+        operation.toString(), code, exclusionState, cache.size(), listState);
 
     try (FileWriter fw = new FileWriter("cache_eviction_final/CacheLog.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);

@@ -72,7 +72,7 @@ public class Simulacao1 {
         e.printStackTrace();
       }
 
-      System.out.println("\n>>> 70 Ordens de Serviço cadastradas com sucesso!");
+      System.out.println("\n>>> 100 Ordens de Serviço cadastradas com sucesso!");
 
       System.out.println("\n=============================================================================");
       System.out.println("Estado da Cache antes das operações:");

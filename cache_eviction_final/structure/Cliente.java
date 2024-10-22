@@ -1,5 +1,6 @@
 package cache_eviction_final.structure;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import cache_eviction_final.exceptions.*;
@@ -14,7 +15,21 @@ public class Cliente {
     // Método para buscar uma ordem de serviço
     public OrderService searchOrderService(int codigo) {
         try {
-            return servidor.searchOrderService(codigo);
+            Message message = servidor.searchOrderService(codigo);
+
+            // Descomprime a mensagem e separa os campos
+            String[] parts = message.decompress().split(",");
+
+            // Converte os campos para os tipos corretos
+            int code = Integer.parseInt(parts[0]);              // Converte o primeiro elemento para int
+            String name = parts[1];                             // Segundo elemento é o nome
+            String description = parts[2];                      // Terceiro elemento é a descrição
+            LocalTime requestTime = LocalTime.parse(parts[3]);  // Quarto elemento é o horário
+
+            // Cria a ordem de serviço
+            OrderService orderService = new OrderService(code, name, description, requestTime);
+
+            return orderService;
         } catch (ElementNotFoundException e) {
             return null;
         }

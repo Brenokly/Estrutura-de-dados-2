@@ -63,21 +63,22 @@ public class Server {
   // --------------------------------------------------------------------------------
   // Métodos
 
-  public OrderService searchOrderService(int codigo) throws ElementNotFoundException {
+  public Message searchOrderService(int codigo) throws ElementNotFoundException {
     OrderService ordem = cache.search(codigo); // Busca na cache
 
     if (ordem != null) { // Se encontrou na cache
       hits++; // Incrementa hits
-      return ordem; // Retorna a ordem
+    } else {
+      ordem = dataBase.search(codigo); // Busca na base de dados caso não tenha encontrado na cache
+      if (ordem != null) { // Se encontrou na base de dados
+        cache.insert(ordem); // Adiciona na cache
+        misses++; // Incrementa misses
+      }
     }
 
-    ordem = dataBase.search(codigo); // Busca na base de dados caso não tenha encontrado na cache
-    if (ordem != null) { // Se encontrou na base de dados
-      cache.insert(ordem); // Adiciona na cache
-      misses++; // Incrementa misses
-    }
+    Message message = new Message(ordem.toString()); // Comprime a ordem de serviço
 
-    return ordem; // Retorna a ordem
+    return message; // Retorna a ordem em forma de mensagem
   }
 
   public Boolean registerOrderService(Message order) {

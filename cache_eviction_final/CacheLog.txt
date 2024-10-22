@@ -1,71 +1,71 @@
 [LOG ENTRY]
 ----------------------------------------------------
-Codigo da Ordem de Servico: 0.
 Operacao realizada: Insercao
+Codigo da Ordem de Servico: 0.
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 1
 Estado da cache:
-0: [Código: 0, Nome: Nome0, Descrição: Descrição0, Hora: 12:36]
+0: [Código: 0, Nome: Nome0, Descrição: Descrição0, Hora: 21:35]
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Codigo da Ordem de Servico: 1.
 Operacao realizada: Insercao
+Codigo da Ordem de Servico: 1.
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 2
 Estado da cache:
-0: [Código: 0, Nome: Nome0, Descrição: Descrição0, Hora: 12:36]
-1: [Código: 1, Nome: Nome1, Descrição: Descrição1, Hora: 12:36]
+0: [Código: 0, Nome: Nome0, Descrição: Descrição0, Hora: 21:35]
+1: [Código: 1, Nome: Nome1, Descrição: Descrição1, Hora: 21:35]
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
+Operacao realizada: Insercao
 Codigo da Ordem de Servico: 2.
-Operacao realizada: Insercao
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 3
 Estado da cache:
-0: [Código: 0, Nome: Nome0, Descrição: Descrição0, Hora: 12:36]
-1: [Código: 1, Nome: Nome1, Descrição: Descrição1, Hora: 12:36]
-2: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 12:36]
+0: [Código: 0, Nome: Nome0, Descrição: Descrição0, Hora: 21:35]
+1: [Código: 1, Nome: Nome1, Descrição: Descrição1, Hora: 21:35]
+2: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 21:35]
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Codigo da Ordem de Servico: 0.
 Operacao realizada: Alteracao
+Codigo da Ordem de Servico: 0.
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 3
 Estado da cache:
-0: [Código: 0, Nome: NomeAlterado0, Descrição: DescriçãoAlterada0, Hora: 12:36]
-1: [Código: 1, Nome: Nome1, Descrição: Descrição1, Hora: 12:36]
-2: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 12:36]
+0: [Código: 0, Nome: NomeAlterado0, Descrição: DescriçãoAlterada0, Hora: 21:35]
+1: [Código: 1, Nome: Nome1, Descrição: Descrição1, Hora: 21:35]
+2: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 21:35]
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
+Operacao realizada: Alteracao
 Codigo da Ordem de Servico: 1.
-Operacao realizada: Alteracao
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 3
 Estado da cache:
-0: [Código: 0, Nome: NomeAlterado0, Descrição: DescriçãoAlterada0, Hora: 12:36]
-1: [Código: 1, Nome: NomeAlterado1, Descrição: DescriçãoAlterada1, Hora: 12:36]
-2: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 12:36]
+0: [Código: 0, Nome: NomeAlterado0, Descrição: DescriçãoAlterada0, Hora: 21:35]
+1: [Código: 1, Nome: NomeAlterado1, Descrição: DescriçãoAlterada1, Hora: 21:35]
+2: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 21:35]
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Codigo da Ordem de Servico: 0.
 Operacao realizada: Remocao
+Codigo da Ordem de Servico: 0.
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 2
 Estado da cache:
-0: [Código: 1, Nome: NomeAlterado1, Descrição: DescriçãoAlterada1, Hora: 12:36]
-1: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 12:36]
+0: [Código: 1, Nome: NomeAlterado1, Descrição: DescriçãoAlterada1, Hora: 21:35]
+1: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 21:35]
 ----------------------------------------------------
 [LOG ENTRY]
 ----------------------------------------------------
-Codigo da Ordem de Servico: 1.
 Operacao realizada: Remocao
+Codigo da Ordem de Servico: 1.
 Status de Exclusao: Nao houve exclusao
 Quantidade de Elementos na cache após a operacao: 1
 Estado da cache:
-0: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 12:36]
+0: [Código: 2, Nome: Nome2, Descrição: Descrição2, Hora: 21:35]
 ----------------------------------------------------

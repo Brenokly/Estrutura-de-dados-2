@@ -33,14 +33,14 @@ public class Server {
   // Construtores
 
   public Server() {
-    this.dataBase = new HashTable(127, HashType.DIVISION);
+    this.dataBase = new HashTable(103, HashType.DIVISION);
     this.cache = new Cache();
     this.hits = 0;
     this.misses = 0;
   }
 
   public Server(int capacidadeCache) {
-    this.dataBase = new HashTable(127, HashType.DIVISION);
+    this.dataBase = new HashTable(103, HashType.DIVISION);
     this.cache = new Cache(capacidadeCache);
     this.hits = 0;
     this.misses = 0;
@@ -175,14 +175,14 @@ public class Server {
 
     String message = String.format(
         "[LOG ENTRY]\n----------------------------------------------------\n" +
-            "Codigo da Ordem de Servico: %d.\n" +
             "Operacao realizada: %s\n" +
-            "Numero de Ordem de Servicos: %d\n" +
+            "Codigo da Ordem de Servico: %d.\n" +
+            "Quantidade de Ordem de Serviços: %d\n" +
             "Status do Redimensionamento: %s\n" +
             "Tamanho atual da tabela hash: %d\n" +
             "Estado da Tabela Hash:\n%s" +
             "----------------------------------------------------",
-        codigo, operation.toString(), dataBase.getQuantityRecords(), resizeStatus, currentSize, tableState);
+        operation.toString(), codigo, dataBase.getQuantityRecords(), resizeStatus, currentSize, tableState);
 
     try (FileWriter fw = new FileWriter("cache_eviction_final/ServerLog.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);

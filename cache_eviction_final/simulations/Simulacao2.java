@@ -37,9 +37,9 @@ public class Simulacao2 {
 
     try {
       OrderService auxi;
-      // Adicionar 100 ordens de serviço iniciais
+      // Adicionar 192 ordens de serviço iniciais
       System.out.println("=============================================");
-      System.out.println(" Início da Inserção de 191 Ordens de Serviço");
+      System.out.println(" Início da Inserção de 192 Ordens de Serviço");
       System.out.println("=============================================");
 
       for (int i = 0; i < 192; i++) {
@@ -50,7 +50,7 @@ public class Simulacao2 {
 
       // Log da inserção de 100 ordens de serviço
       String messagem = String.format("\n----------------------------------------------------\n"
-          + "Insercao de 191 Ordens de Servico concluida."
+          + "Insercao de 192 Ordens de Servico concluida."
           + "\n----------------------------------------------------\n");
       try (FileWriter fw = new FileWriter("cache_eviction_final/ServerLog.txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
@@ -62,7 +62,7 @@ public class Simulacao2 {
         e.printStackTrace();
       }
 
-      System.out.println("\n>>> 191 Ordens de Serviço cadastradas com sucesso!");
+      System.out.println("\n>>> 192 Ordens de Serviço cadastradas com sucesso!");
 
       System.out.println("\n=============================================");
       System.out.println("Estado da Cache antes das operações:");
@@ -72,7 +72,7 @@ public class Simulacao2 {
       // --------------------------------------------------------------------------------
       // Realizar algumas consultas
 
-      System.out.println("           Realizando Consultas");
+      System.out.println("           Realizando 30 Consultas");
       System.out.println("=============================================");
 
       for (int i = 0; i < 30; i++) {
@@ -87,8 +87,7 @@ public class Simulacao2 {
       System.out.println("Estado da Cache após as consultas:");
       System.out.println("Quantidade de elementos na cache: " + servidor.getCache().size());
       servidor.getCache().show();
-      System.out.println("=============================================");
-      System.out.println("---------------------------------------------\n");
+      System.out.println("=============================================\n");
 
       // --------------------------------------------------------------------------------
       // Umas consultas apenas para checar o hit na cache
@@ -97,21 +96,24 @@ public class Simulacao2 {
         cliente.searchOrderService(i);
       }
 
+      System.out.println("Buscando novamente as 30 primeiras ordens de serviço para dar hits na cache....\n");
+
       // --------------------------------------------------------------------------------
       // Exibir estado da cache após as operações
 
-      System.out.println("\n=============================================");
-      System.out.println("         Estado da Cache após a busca");
+      System.out.println("\n============================================================");
+      System.out.println("         Estado da Cache após as buscas para dar hits");
       System.out.println("Quantidade de elementos na cache: " + servidor.getCache().size());
-      System.out.println("=============================================");
+      System.out.println("==============================================================");
       servidor.getCache().show();
-      System.out.println("---------------------------------------------");
+      System.out.println("--------------------------------------------------------------");
 
       // --------------------------------------------------------------------------------
       // Consultar ordens de serviço inexistentes na cache!
       // Como a cache está cheia, as ordens de serviço serão removidas aleatoriamente!
-
-      for (int i = 20; i < 40; i++) {
+      System.out.println("\n============================================================");
+      System.out.println("         Novas Consultas para mostrar o Cache Eviction");
+      for (int i = 30; i < 60; i++) {
         System.out.printf("Consulta Ordem de Serviço com código %d\n", i);
         auxi = cliente.searchOrderService(i);
         System.out.printf("Ordem de Serviço encontrada:\nCódigo: %d, Nome: %s, Descrição: %s\n",

@@ -1,4 +1,4 @@
-package cache_eviction_final.compression;
+package cache_eviction_final.structure.listPstructure;
 
 /*
  * Aqui, vamos implementar a estrutura de dados MinHeap.
@@ -8,6 +8,7 @@ package cache_eviction_final.compression;
 
 import java.util.ArrayList;
 import java.util.List;
+import cache_eviction_final.compression.Node;;
 
 // Estrutura de dados MinHeap personalizada
 public class MinHeap {
@@ -55,7 +56,7 @@ public class MinHeap {
     int parentIndex = (index - 1) / 2; // Índice do pai
 
     // Se o nó atual é menor que seu pai, faz a troca
-    if (index > 0 && heap.get(index).frequency < heap.get(parentIndex).frequency) {
+    if (index > 0 && heap.get(index).getFrequency() < heap.get(parentIndex).getFrequency()) {
       swap(index, parentIndex); // Troca o nó com seu pai
       heapifyUp(parentIndex); // Continua subindo
     }
@@ -68,11 +69,11 @@ public class MinHeap {
     int smallest = index; // Assume que o menor é o nó atual
 
     // Verifica se o filho esquerdo existe e é menor que o nó atual
-    if (leftChild < heap.size() && heap.get(leftChild).frequency < heap.get(smallest).frequency) {
+    if (leftChild < heap.size() && heap.get(leftChild).getFrequency() < heap.get(smallest).getFrequency()) {
       smallest = leftChild; // Atualiza o menor
     }
     // Verifica se o filho direito existe e é menor que o menor atual
-    if (rightChild < heap.size() && heap.get(rightChild).frequency < heap.get(smallest).frequency) {
+    if (rightChild < heap.size() && heap.get(rightChild).getFrequency() < heap.get(smallest).getFrequency()) {
       smallest = rightChild; // Atualiza o menor
     }
     // Se o menor não for o nó atual, faz a troca

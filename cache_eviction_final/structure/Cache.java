@@ -95,13 +95,13 @@ public class Cache {
 
     String message = String.format(
         "[LOG ENTRY]\n----------------------------------------------------\n" +
-            "Codigo da Ordem de Servico: %d.\n" +
             "Operacao realizada: %s\n" +
+            "Codigo da Ordem de Servico: %d.\n" +
             "Status de Exclusao: %s\n" +
             "Quantidade de Elementos na cache após a operacao: %d\n" +
             "Estado da cache:\n%s" +
             "----------------------------------------------------",
-            code, operation.toString(),  exclusionState, cache.size(), listState);
+            operation.toString(), code, exclusionState, cache.size(), listState);
 
     try (FileWriter fw = new FileWriter("cache_eviction_final/CacheLog.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);

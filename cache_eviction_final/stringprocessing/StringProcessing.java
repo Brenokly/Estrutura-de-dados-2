@@ -8,7 +8,7 @@ import java.util.List;
 
 public class StringProcessing {
     // Algoritmo KMP para buscar a substring em cada linha do texto
-    public static List<String> searchKMP(String pattern, String[] lines, int rowsReturned) {
+    public List<String> searchKMP(String pattern, String[] lines, int rowsReturned) {
         List<String> occurrences = new ArrayList<>();
         int[] prefixTable = buildPrefixTable(pattern); // Constrói a tabela de prefixo
 
@@ -82,7 +82,7 @@ public class StringProcessing {
 
     // Lê o log de um arquivo e retorna como um array de strings
     // Fiz dessa forma para retornar a linha exata onde a substring foi encontrada
-    public static String[] readLogFile(String filePath) throws IOException {
+    public String[] readLogFile(String filePath) throws IOException {
         List<String> logLines = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;

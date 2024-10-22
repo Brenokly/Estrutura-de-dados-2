@@ -83,6 +83,7 @@ public class HashTable {
 
       case ANALYSIS:
         return HashFunctions.analysisHash(key, size);
+
       default:
         return key % this.size; // Defini o método da divisão como padrão
     }
@@ -143,7 +144,7 @@ public class HashTable {
   // --------------------------------------------------------------------------------
   // Métodos auxiliares
 
-  // Métodos que busca o próximo primo maior que N
+  // Métodos que busca o próximo primo menor que N
   private int previousCousin(int n) {
     int candidato;
 
@@ -320,7 +321,7 @@ public class HashTable {
       return;
     }
 
-    System.out.println("========== Hash Table ==========");
+    System.out.println("================================ Hash Table ================================");
     for (int i = 0; i < table.length; i++) {
       if (table[i] != null) {
         for (int j = 0; j < table[i].size(); j++) {
@@ -331,7 +332,7 @@ public class HashTable {
         System.out.println("null");
       }
     }
-    System.out.println("=========================================");
+    System.out.println("============================================================================");
   }
 
   public String getTableState() {
@@ -341,7 +342,6 @@ public class HashTable {
       return "Tabela vazia";
     }
 
-    sb.append("Estado da Tabela Hash:\n");
     for (int i = 0; i < table.length; i++) {
       if (table[i] != null && table[i].size() > 0) {
         sb.append("Indice ").append(i).append(": ");

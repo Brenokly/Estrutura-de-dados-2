@@ -15,7 +15,7 @@ import cache_eviction_final.exceptions.*;
  * Essa simulação foi criada com base na simulação pedida no documento!
  * Inicia o programa:
  
- * 1) 70 ordens de serviço são cadastradas.
+ * 1) 100 ordens de serviço são cadastradas.
  
  * Depois é realizada:
  
@@ -23,7 +23,7 @@ import cache_eviction_final.exceptions.*;
  * 3) Uma listagem.
  * 4) Dois cadastros seguidos de listagens.
  * 5) Duas alterações seguidas de listagens.
- * 6) Duas remoções seguidas de listagens..
+ * 6) Três remoções seguidas de listagens..
 */
 
 public class Simulacao1 {
@@ -48,11 +48,11 @@ public class Simulacao1 {
 
     try {
       // Adicionar 70 ordens de serviço iniciais
-      System.out.println("=============================================");
-      System.out.println(" Início da Inserção de 70 Ordens de Serviço");
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
+      System.out.println(" Início da Inserção de 100 Ordens de Serviço");
+      System.out.println("=============================================================================");
 
-      for (int i = 0; i < 70; i++) {
+      for (int i = 0; i < 100; i++) {
         OrderService os = new OrderService("Nome" + i, "Descrição" + i);
         message = new Message(os.toString()); // Passando a ordem de serviço como mensagem comprimida
         cliente.registerOrderService(message);
@@ -60,7 +60,7 @@ public class Simulacao1 {
 
       // Log da inserção de 70 ordens de serviço
       String messagem = String.format("\n----------------------------------------------------\n"
-          + "Insercao de 70 Ordens de Servico concluida."
+          + "Insercao de 100 Ordens de Servico concluida."
           + "\n----------------------------------------------------\n");
       try (FileWriter fw = new FileWriter("cache_eviction_final/ServerLog.txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
@@ -74,14 +74,14 @@ public class Simulacao1 {
 
       System.out.println("\n>>> 70 Ordens de Serviço cadastradas com sucesso!");
 
-      System.out.println("\n=============================================");
+      System.out.println("\n=============================================================================");
       System.out.println("Estado da Cache antes das operações:");
       servidor.getCache().show();
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
 
       // Realizar três consultas
       System.out.println("          Realizando Consultas");
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
 
       for (int i = 0; i < 3; i++) {
         System.out.printf("Consulta Ordem de Serviço com código %d\n", i);
@@ -89,23 +89,21 @@ public class Simulacao1 {
         System.out.printf("Ordem de Serviço encontrada:\nCódigo: %d, Nome: %s, Descrição: %s\n",
             auxi.getCode(), auxi.getName(), auxi.getDescription());
 
-        System.out.println("\n=============================================");
+        System.out.println("\n=============================================================================");
         System.out.println("Estado da Cache após a consulta:");
         servidor.getCache().show();
-        System.out.println("=============================================");
-        System.out.println("---------------------------------------------\n");
+        System.out.println("=============================================================================");
       }
 
       // Listar todas as ordens de serviço
-      System.out.println("\n=============================================");
       System.out.println("           Listagem de Ordens de Serviço");
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
       cliente.listPrintOrdersService();
 
       // Cadastrar duas novas ordens e listar novamente
-      System.out.println("\n=============================================");
+      System.out.println("\n=============================================================================");
       System.out.println("  Cadastrando duas novas Ordens de Serviço");
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
 
       for (int i = 70; i < 72; i++) {
         OrderService os = new OrderService("NomeNovo" + i, "DescriçãoNova" + i);
@@ -119,9 +117,9 @@ public class Simulacao1 {
       cliente.listPrintOrdersService();
 
       // Alterar duas ordens e listar novamente
-      System.out.println("\n=============================================");
+      System.out.println("\n=============================================================================");
       System.out.println("       Alterando duas Ordens de Serviço");
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
 
       for (int i = 0; i < 2; i++) {
         OrderService os = new OrderService(i, "NomeAlterado" + i, "DescriçãoAlterada" + i);
@@ -131,36 +129,40 @@ public class Simulacao1 {
             os.getCode(), os.getName(), os.getDescription());
       }
 
-      System.out.println("\n=============================================");
+      System.out.println("\n=============================================================================");
       System.out.println("Estado da Cache após as alterações:");
       servidor.getCache().show();
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
 
       System.out.println("\n>>> Listagem após a alteração de duas ordens:");
       cliente.listPrintOrdersService();
 
       // Remover duas ordens e listar novamente
-      System.out.println("\n=============================================");
-      System.out.println("         Removendo duas Ordens de Serviço");
-      System.out.println("=============================================");
+      System.out.println("\n=============================================================================");
+      System.out.println("         Removendo três Ordens de Serviço");
+      System.out.println("=============================================================================");
 
       for (int i = 0; i < 2; i++) {
         cliente.removeOrderService(i);
         System.out.printf("Ordem de Serviço %d removida com sucesso!\n", i);
       }
 
-      System.out.println("\n=============================================");
+      // Terceira remoção
+      cliente.removeOrderService(55);
+      System.out.printf("Ordem de Serviço %d removida com sucesso!\n", 55);
+
+      System.out.println("\n=============================================================================");
       System.out.println("Estado da Cache após as remoções:");
       servidor.getCache().show();
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
 
       System.out.println("\n>>> Listagem após a remoção de duas ordens:");
       cliente.listPrintOrdersService();
 
       // Exibir estado da cache após as operações
-      System.out.println("\n=============================================");
+      System.out.println("\n=============================================================================");
       System.out.println("         Estado da Cache após operações");
-      System.out.println("=============================================");
+      System.out.println("=============================================================================");
       servidor.getCache().show();
       System.out.println("---------------------------------------------");
 

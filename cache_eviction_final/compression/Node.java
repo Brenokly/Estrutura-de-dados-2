@@ -2,7 +2,7 @@ package cache_eviction_final.compression;
 
 /*
  * Representação de um nó da árvore de Huffman.
- */
+*/
 
 public class Node {
   char character; // Caractere armazenado (ou '\0' para nós internos)

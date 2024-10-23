@@ -1,6 +1,3 @@
-Claro! Aqui está o conteúdo do README formatado em texto simples, incluindo os marcadores de título apropriados:
-
-```
 # Projeto de Simulação de Cache Eviction
 
 ## Sobre o Projeto
@@ -62,4 +59,3 @@ Este projeto está licenciado sob a MIT License. Veja o arquivo `LICENSE` para m
 ## Agradecimentos
 
 Agradeço aos professores e colegas da UFERSA pela colaboração e aprendizado durante esta disciplina!
-```

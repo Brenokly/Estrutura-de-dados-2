@@ -1,5 +1,3 @@
-Aqui está uma versão mais estilizada e divertida do README, com emojis e uma formatação atraente:
-
 # 💾 Projeto de Simulação de Cache Eviction
 
 ## 📖 Sobre o Projeto

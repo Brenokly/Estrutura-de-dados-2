@@ -1,9 +1,11 @@
 # 💾 Projeto de Simulação de Cache Eviction
 
+
 ## Disciplina: Estrutura de Dados 2 📚
 ### Curso: Ciência da Computação 💻
 ### Universidade: Ufersa - Universidade Federal Rural do Semi-Árido 🌱
 ### Ano: 2024 📅
+
 
 ## 📖 Sobre o Projeto
 

@@ -49,7 +49,7 @@ Para rodar os projetos, siga as instruções abaixo:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/Estrutura-de-dados-2.git
+   https://github.com/Brenokly/Estrutura-de-dados-2.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash

@@ -1,5 +1,10 @@
 # 💾 Projeto de Simulação de Cache Eviction
 
+## Disciplina: Estrutura de Dados 2 📚
+### Curso: Ciência da Computação 💻
+### Universidade: Ufersa - Universidade Federal Rural do Semi-Árido 🌱
+### Ano: 2024 📅
+
 ## 📖 Sobre o Projeto
 
 Este repositório contém os projetos desenvolvidos durante a disciplina de **Estruturas de Dados II (ED2)** do curso de **Ciências da Computação** da **UFERSA (Universidade Federal Rural do Semi-Árido)**. Ao longo da disciplina, exploramos diversas estruturas de dados essenciais, aplicadas em três projetos distintos, cada um focando na implementação de uma simulação de **cache eviction** entre um cliente e um servidor. O objetivo foi aprimorar a solução a cada unidade utilizando novas estruturas de dados aprendidas.

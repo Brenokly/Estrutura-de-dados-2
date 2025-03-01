@@ -62,5 +62,5 @@ Para rodar os projetos, siga as instruções abaixo:
 
 ## 🙏 Agradecimentos
 
-Agradeço ao professor [@Paulo Henrique Lopes Silva] e aos colegas da UFERSA pela colaboração e aprendizado durante esta disciplina! 🌟
+Agradeço ao professor [@Paulo Henrique Lopes Silva] pelo aprendizado durante esta disciplina! 🌟
 ```
